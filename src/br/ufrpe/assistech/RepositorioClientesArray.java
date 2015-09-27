@@ -4,7 +4,7 @@ package br.ufrpe.assistech;
 
 public class RepositorioClientesArray {
     private Cliente[] clientes;
-    private int proxima;/**proxima conta de Cliente,
+    private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
@@ -16,7 +16,7 @@ public class RepositorioClientesArray {
         this.proxima = 0;
     }
     
-    public void cadastrar(Cliente c){           /**atualiza a variavel proxima
+    public void cadastrar(Cliente c){           /*atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 */
