@@ -15,6 +15,11 @@ public class AssistechMain {
         
         int opt = input.nextInt();
         
+        switch(opt){
         
+            case 1:
+        
+        
+        }
     }
 }
