@@ -8,9 +8,9 @@ public class OS {
     private double entrega;
 
     public OS(int no, double data, double entrega) { //construtor, aplicar Java.Time nas datas
-        no = no;
-        data = data;
-        entrega = entrega;
+        this.no = no;
+        this.data = data;
+        this.entrega = entrega;
     }
     
     
