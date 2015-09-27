@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 
 public class AssistechMain {
-    public static void main(String[] args){
-        System.out.println("Bem vindo a AssisTECH!");
+    
+    
+    public static void Menu(){
+    System.out.println("Bem vindo a AssisTECH!");
         System.out.println("Escolha uma opcão: ");
         Scanner input = new Scanner(System.in);
         
@@ -21,5 +23,11 @@ public class AssistechMain {
         
         
         }
+    
+    }
+    
+    
+    public static void main(String[] args){
+        Menu();
     }
 }
