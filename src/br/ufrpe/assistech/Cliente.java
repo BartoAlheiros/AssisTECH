@@ -38,5 +38,13 @@ public class Cliente {
         return endereco;
     }
     
+    public String toString (){
+        String text = "";
+        text = this.nome;
+        text = this.cpf;
+        text = this.endereco;
+        text = this.telefone;
+        return text;
+    }
     
 }
