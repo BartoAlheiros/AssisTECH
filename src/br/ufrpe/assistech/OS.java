@@ -6,12 +6,14 @@ public class OS {
     private String no;//número da OS
     private double data;
     private double entrega;
-    private Cliente cliente; 
+    private Equip equipamento;
+    
 
-    public OS(String no, double data, double entrega) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
+    public OS(String no, double data, double entrega, Equip equipamento) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
         this.no = no;
         this.data = data;
         this.entrega = entrega;
+        this.equipamento = equipamento;
     }
   
    public String getNo (){
@@ -30,12 +32,17 @@ public class OS {
        this.entrega = entrega;
    }
    
-   public Cliente getCliente() {
-       return cliente;
+   public Equip getEquipamento() {
+       return equipamento;
    }
    
     public String toString(){
-         
+         String text = "";
+         text += this.equipamento.toString();
+         text += this.no;
+         text += this.data;
+         text += this.entrega;
+         return text;
     }
     
 }
