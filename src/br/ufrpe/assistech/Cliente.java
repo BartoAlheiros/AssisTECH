@@ -46,5 +46,7 @@ public class Cliente {
         text = this.telefone;
         return text;
     }
-    
+    public static void main(String[] args) {
+        
+    }
 }
