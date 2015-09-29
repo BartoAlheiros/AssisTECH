@@ -24,14 +24,42 @@ public class RepositorioClientesArray {
         this.proxima = proxima + 1;
     }
     
-    public Cliente procurar(String num){        /**procura uma conta, recebendo
+   private int procurarIndice(String cpf) {
+       int i = 0;
+       boolean achou = false;
+       while ((!achou) && (i < this.proxima)) {
+       if (cpf.equals(this.clientes[i].getCpf())) {
+       achou = true;
+     } else {
+         i = i + 1;
+       }
+    }
+      return i;
+   }
+    public Cliente procurar(String cpf){        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
                                                 */
-        int i = 0;
-        boolean achou = false;
-        while((!achou) && (i < this.proxima)){
-            if(num.equals(this.contas[i].getNumero()));
-        }
+     
+    int i = this.procurarIndice(cpf);
+    Cliente resultado = null;
+    if (i != this.proxima) {
+    resultado = this.clientes[i];
     }
+    return resultado;
+          
+    }
+   
+    public void remover(String cpf) {
+    int i = this.procurarIndice(cpf);
+    if (i != this.proxima) {
+    this.clientes[i] = this.clientes[this.proxima - 1];
+    this.clientes[this.proxima - 1] = null;
+    this.proxima = this.proxima - 1;
+    System.out.println("Cliente " + cpf + " removido");
+    } else {
+    System.out.println("Cadastro não existente.");
+        }
+    }    
 }
+
