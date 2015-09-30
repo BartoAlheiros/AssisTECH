@@ -56,20 +56,19 @@ public class RepositorioClientesArray {
           
     }
    
-    public void remover(String cpf) {
+    public boolean remover(String cpf) {
         int i = this.procurarIndice(cpf);
-    
+     
         if (i != this.proxima) {
-        
+         String nome = this.cliente[i].getNome();
         this.cliente[i] = this.cliente[this.proxima - 1];
         this.cliente[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        System.out.println("Cliente " + cpf + " removido");
+       return true;
         } else {
-        
-        System.out.println("Cadastro não existente.");
-        
+        return false;
+       
         }
     }    
 }
