@@ -40,10 +40,10 @@ public class Cliente {
     
     public String toString (){
         String text = "";
-        text = this.nome;
-        text = this.cpf;
-        text = this.endereco;
-        text = this.telefone;
+        text += this.nome;
+        text += this.cpf;
+        text += this.endereco;
+        text += this.telefone;
         return text;
     }
     public static void main(String[] args) {
