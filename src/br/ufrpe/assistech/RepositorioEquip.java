@@ -16,7 +16,7 @@ public class RepositorioEquip {
                         *dentro do array de Equip, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
-                        *RepositorioEquip, abaixo.
+                        *RepositorioEquip abaixo.
                         */
     
     public RepositorioEquip(int tamanho){
