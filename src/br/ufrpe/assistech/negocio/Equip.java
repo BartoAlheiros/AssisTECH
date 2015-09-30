@@ -1,5 +1,7 @@
 
-package br.ufrpe.assistech;
+package br.ufrpe.assistech.negocio;
+
+import br.ufrpe.assistech.negocio.Cliente;
 
 /**
  *
