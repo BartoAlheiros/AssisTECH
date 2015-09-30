@@ -3,7 +3,7 @@ package br.ufrpe.assistech;
 
 
 public class RepositorioClientesArray {
-    private Cliente[] clientes;
+    private Cliente[] cliente;
     private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
                         *com o tamanho, passado pelo usuário,
@@ -12,15 +12,16 @@ public class RepositorioClientesArray {
                         */
     
     public RepositorioClientesArray(int tamanho){
-        this.clientes = new Cliente[tamanho];
+        this.cliente = new Cliente[tamanho];
         this.proxima = 0;
     }
     
-    public void cadastrar(Cliente c){           /*atualiza a variavel proxima
+    public void cadastrar(Cliente c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
+                                                *2 - Método que cadastra uma conta
                                                 */
-        this.clientes[this.proxima] = c;
+        this.cliente[this.proxima] = c;
         this.proxima = proxima + 1;
     }
     
@@ -28,37 +29,45 @@ public class RepositorioClientesArray {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
-       if (cpf.equals(this.clientes[i].getCpf())) {
-       achou = true;
-     } else {
-         i = i + 1;
+            if (cpf.equals(this.cliente[i].getCpf())) {
+            achou = true;
+            } else {
+            i = i + 1;
+            }
+       
        }
-    }
       return i;
-   }
+    }
     public Cliente procurar(String cpf){        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
                                                 */
      
-    int i = this.procurarIndice(cpf);
-    Cliente resultado = null;
-    if (i != this.proxima) {
-    resultado = this.clientes[i];
-    }
-    return resultado;
+        int i = this.procurarIndice(cpf);
+        Cliente resultado = null;
+        
+        if (i != this.proxima) {
+        resultado = this.cliente[i];
+        }
+        
+        return resultado;
           
     }
    
     public void remover(String cpf) {
-    int i = this.procurarIndice(cpf);
-    if (i != this.proxima) {
-    this.clientes[i] = this.clientes[this.proxima - 1];
-    this.clientes[this.proxima - 1] = null;
-    this.proxima = this.proxima - 1;
-    System.out.println("Cliente " + cpf + " removido");
-    } else {
-    System.out.println("Cadastro não existente.");
+        int i = this.procurarIndice(cpf);
+    
+        if (i != this.proxima) {
+        
+        this.cliente[i] = this.cliente[this.proxima - 1];
+        this.cliente[this.proxima - 1] = null;
+        this.proxima = this.proxima - 1;
+    
+        System.out.println("Cliente " + cpf + " removido");
+        } else {
+        
+        System.out.println("Cadastro não existente.");
+        
         }
     }    
 }
