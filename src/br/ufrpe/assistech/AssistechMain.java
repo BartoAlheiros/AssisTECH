@@ -1,13 +1,16 @@
 
 package br.ufrpe.assistech;
 
+
+import br.ufrpe.assistech.dados.RepositorioClientesArray;
+import br.ufrpe.assistech.negocio.Cliente;
 import java.util.Scanner;
 
 
 public class AssistechMain {
     
     
-    public static void Menu(){
+    /*public static void Menu(){
     System.out.println("Bem vindo a AssisTECH!");
         System.out.println("Escolha uma opcão: ");
         Scanner input = new Scanner(System.in);
@@ -24,10 +27,21 @@ public class AssistechMain {
         
         }
     
-    }
+    }*/
     
     
     public static void main(String[] args){
-        Menu();
+     
+       //Menu();
+    
+       RepositorioClientesArray r = new RepositorioClientesArray(3); 
+       
+       Cliente c = new Cliente("Assis", "666.555.444-33");
+       r.cadastrar(c);
+       boolean x = r.remover("666.555.444-3");
+       if (x == true) System.out.println("REMOVIDO COM SUCESSO");
+       else System.out.println("CADASTRO NÃO EXISTENTE");
+       
     }
+    
 }
