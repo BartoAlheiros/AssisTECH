@@ -1,7 +1,7 @@
 
 package br.ufrpe.assistech.dados;
 
-import br.ufrpe.assistech.negocio.Cliente;
+import entityBeans.Cliente;
 
 
 public class RepositorioClientesArray {
@@ -40,6 +40,15 @@ public class RepositorioClientesArray {
        }
       return i;
     }
+   
+    public boolean existe(String cpf){
+       boolean existe = false;
+       int indice = this.procurarIndice(cpf);
+       if (indice != proxima){
+           existe = true;
+       }
+       return existe;
+    }
     public Cliente procurar(String cpf){        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
@@ -60,7 +69,7 @@ public class RepositorioClientesArray {
         int i = this.procurarIndice(cpf);
      
         if (i != this.proxima) {
-         String nome = this.cliente[i].getNome();
+        String nome = this.cliente[i].getNome();
         this.cliente[i] = this.cliente[this.proxima - 1];
         this.cliente[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;

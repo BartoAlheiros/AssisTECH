@@ -5,7 +5,7 @@
  */
 package br.ufrpe.assistech.dados;
 
-import br.ufrpe.assistech.negocio.Equip;
+import entityBeans.Equip;
 
 /**
  *
@@ -41,13 +41,25 @@ public class RepositorioEquip {
        while ((!achou) && (i < this.proxima)) {
             if (serie.equals(this.Equip[i].getSerie())) {
             achou = true;
-            } else {
+            
+            } 
+            else {
             i = i + 1;
             }
        
        }
       return i;
     }
+   
+    public boolean existe(String serie){
+       boolean existe = false;
+       int indice = this.procurarIndice(serie);
+       if (indice != proxima){
+           existe = true;
+       }
+       return existe;
+    }
+   
     public Equip procurar(String serie){        /*procura um Equipamento, recebendo
                                                 *como parâmetro o número de serie desse
                                                 *equipamento.

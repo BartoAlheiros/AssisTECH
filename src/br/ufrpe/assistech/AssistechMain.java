@@ -3,7 +3,7 @@ package br.ufrpe.assistech;
 
 
 import br.ufrpe.assistech.dados.RepositorioClientesArray;
-import br.ufrpe.assistech.negocio.Cliente;
+import entityBeans.Cliente;
 import java.util.Scanner;
 
 
