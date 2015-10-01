@@ -2,7 +2,7 @@
 package br.ufrpe.assistech.negocio;
 
 import br.ufrpe.assistech.dados.RepositorioClientesArray;
-import br.ufrpe.assistech.negocio.Cliente;
+import entityBeans.Cliente;
 
 /**
  *
@@ -35,8 +35,17 @@ public class CadastroCliente {
     }
     
     public boolean existe(String cpf){
-        return this.repositorio.   //faltando inserir o método existe
-                                   // ou equivalente, qeu se encontre na classe do repositório.
+        return this.repositorio.existe(cpf);
+    }
+    
+    public void descadastrar(String cpf){ 
+        Cliente c = this.repositorio.procurar(cpf);
+        if(c != null){
+            this.repositorio.remover(cpf);
+        }else{
+            //Conta inexistente ou conta ainda ativa.
+        }
+        
     }
     
 }
