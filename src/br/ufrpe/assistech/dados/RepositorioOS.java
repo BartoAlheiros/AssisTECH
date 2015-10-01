@@ -5,7 +5,7 @@
  */
 package br.ufrpe.assistech.dados;
 
-import br.ufrpe.assistech.negocio.OS;
+import entityBeans.OS;
 
 /**
  *
@@ -48,6 +48,16 @@ public class RepositorioOS {
        }
       return i;
     }
+   
+    public boolean existe(String numero){
+       boolean existe = false;
+       int indice = this.procurarIndice(numero);
+       if (indice != proxima){
+           existe = true;
+       }
+       return existe;
+    }
+   
     public OS procurar(String no){        /*procura uma OS, recebendo
                                                 *como parâmetro o número dessa
                                                 *OS.
