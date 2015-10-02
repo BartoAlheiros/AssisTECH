@@ -15,7 +15,7 @@ public class Equip {
     private String serie;
     private Cliente cliente;
     
-    public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente){
+    public Equip (String marca, String modelo, String caracteristica, String serie) {
         this.marca = marca;
         this.modelo = modelo;
         this.caracteristica = caracteristica;
@@ -27,7 +27,7 @@ public class Equip {
         return marca;
     }
     
-    public void setMarca(){
+    public void setMarca(String marca){
         this.marca = marca;
     }
     
@@ -35,7 +35,7 @@ public class Equip {
         return modelo;
     }
     
-    public void setModelo(){
+    public void setModelo(String modelo){
         this.modelo=modelo;
     }
     
@@ -43,7 +43,7 @@ public class Equip {
         return caracteristica;
     }
     
-    public void setCaracteristica(){
+    public void setCaracteristica(String caracteristica){
         this.caracteristica=caracteristica;
     }
     
@@ -51,7 +51,7 @@ public class Equip {
         return serie;
     }
     
-    public void setSerie(){
+    public void setSerie(String serie){
         this.serie=serie;
     }
     
