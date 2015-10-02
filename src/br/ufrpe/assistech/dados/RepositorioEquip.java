@@ -76,7 +76,7 @@ public class RepositorioEquip {
           
     }
    
-    public boolean remover(String serie) {
+    public void remover(String serie) {
         int i = this.procurarIndice(serie);
     
         if (i != this.proxima) {
@@ -85,10 +85,10 @@ public class RepositorioEquip {
         this.Equip[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        return true;
+        
         } else {
         
-        return false;
+        
         
         }
     }

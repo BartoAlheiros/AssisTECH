@@ -38,12 +38,13 @@ public class CadastroEquipamento {
         return this.repositorio.existe(cpf);
     }
     
-    public void descadastrar(String serie){ 
+    public boolean descadastrar(String serie){ 
         Equip a = this.repositorio.procurar(serie);
         if(a != null){
             this.repositorio.remover(serie);
+            return true;
         }else{
-            //Conta inexistente ou conta ainda ativa.
+           return false; //Conta inexistente ou conta ainda ativa.
         }
         
     }

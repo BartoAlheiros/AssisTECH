@@ -74,7 +74,7 @@ public class RepositorioOS {
           
     }
    
-    public boolean remover(String no) {
+    public void remover(String no) {
         int i = this.procurarIndice(no);
     
         if (i != this.proxima) {
@@ -83,10 +83,10 @@ public class RepositorioOS {
         this.OS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        return true;
+        
         } else {
         
-        return false;
+        
         
         }
     }
