@@ -51,12 +51,15 @@ public class Cliente {
     public String getCpf() {
         return cpf;
     }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     public String getEndereco() {
         return endereco;
     }
     
-    public void setEmail(){
+    public void setEmail(String email){
         this.email = email;
     }
     

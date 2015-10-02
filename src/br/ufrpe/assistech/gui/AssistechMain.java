@@ -38,8 +38,15 @@ public class AssistechMain {
         switch(opt){
         
             case 1:
-       Cliente c = new Cliente ("Assis", "111.111.111-11", "Rua Manuel de Medeiros, 45, Dois Irmãos, Recife - PE","81988888888","81999999999", "assistech@email.com");
-       c.setNome("Assis Silva");
+       Cliente c = new Cliente ("", "", "","","", "");
+                System.out.println("Dados do cliente :");                
+                System.out.println("Nome :");   c.setNome(input.nextLine());
+                System.out.println("CPF :");    c.setCpf(input.nextLine());
+                System.out.println("Endereço :"); c.setEndereco(input.nextLine());
+                System.out.println("Telefone Fixo :"); c.setTelefone1(input.nextLine());
+                System.out.println("Telefone celular :"); c.setTelefone2 (input.nextLine());
+                System.out.println("Email :"); c.setEmail(input.nextLine());
+       
     
        c1.Cadastrar(c);
                 break;
