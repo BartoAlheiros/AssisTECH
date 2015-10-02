@@ -9,6 +9,8 @@ public class OS {
     private double data;
     private double entrega;
     private Equip equipamento;
+    private boolean ativa; // para o método descadastrar saber se a OS está ativa 
+                          //ou não e assim poder eliminá-la ou não.
     
 
     public OS(String no, double data, double entrega, Equip equipamento) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
@@ -16,6 +18,7 @@ public class OS {
         this.data = data;
         this.entrega = entrega;
         this.equipamento = equipamento;
+        this.ativa = true; 
     }
   
    public String getNo (){
@@ -36,6 +39,10 @@ public class OS {
    
    public Equip getEquipamento() {
        return equipamento;
+   }
+   
+   public boolean getAtiva(){
+       return this.ativa;
    }
    
     public String toString(){
