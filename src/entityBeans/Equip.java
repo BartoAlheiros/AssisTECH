@@ -12,10 +12,10 @@ public class Equip {
     private String marca;
     private String modelo;
     private String caracteristica;
-    private int serie;
+    private String serie;
     private Cliente cliente;
     
-    public Equip (String marca, String modelo, String caracteristica, int serie, Cliente cliente){
+    public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente){
         this.marca = marca;
         this.modelo = modelo;
         this.caracteristica = caracteristica;
@@ -47,7 +47,7 @@ public class Equip {
         this.caracteristica=caracteristica;
     }
     
-    public int getSerie(){
+    public String getSerie(){
         return serie;
     }
     
@@ -61,11 +61,11 @@ public class Equip {
     
     public String toString(){
         String text = "";
-        text += this.marca;
-        text += this.modelo;
-        text += this.caracteristica;
-        text += this.serie;
-        text += this.cliente.toString();
+        text += "Marca :" + this.marca + "";
+        text += "Modelo :" +this.modelo + "";
+        text += "Caracteristica do Equipamento: " + this.caracteristica + "";
+        text += "Número de série :" + this.serie + "";
+        text += "Dono :" + this.cliente.toString() + "";
         return text; 
     }
     

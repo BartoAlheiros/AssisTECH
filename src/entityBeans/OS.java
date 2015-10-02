@@ -40,10 +40,10 @@ public class OS {
    
     public String toString(){
          String text = "";
-         text += this.equipamento.toString();
-         text += this.no;
-         text += this.data;
-         text += this.entrega;
+         text += "Dados do Equipmento :" + this.equipamento.toString() + "";
+         text += "Numero da Ordem :" + this.no + "";
+         text += "Data de entrada" + this.data + "";
+         text += "Previsão de Entrega" + this.entrega + "";
          return text;
     }
     

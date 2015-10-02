@@ -4,7 +4,7 @@ package br.ufrpe.assistech.dados;
 import entityBeans.Cliente;
 
 
-public class RepositorioClientesArray {
+public class RepositorioCliente {
     private Cliente[] cliente;
     private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
@@ -13,7 +13,7 @@ public class RepositorioClientesArray {
                         *RepositorioContasArray, abaixo.
                         */
     
-    public RepositorioClientesArray(int tamanho){
+    public RepositorioCliente(int tamanho){
         this.cliente = new Cliente[tamanho];
         this.proxima = 0;
     }

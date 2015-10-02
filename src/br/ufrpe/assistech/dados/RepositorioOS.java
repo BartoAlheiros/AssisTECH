@@ -74,7 +74,7 @@ public class RepositorioOS {
           
     }
    
-    public void remover(String no) {
+    public boolean remover(String no) {
         int i = this.procurarIndice(no);
     
         if (i != this.proxima) {
@@ -83,10 +83,10 @@ public class RepositorioOS {
         this.OS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        System.out.println("Ordem de Serviço " + no + " removido");
+        return true;
         } else {
         
-        System.out.println("Ordem não existente.");
+        return false;
         
         }
     }

@@ -1,7 +1,7 @@
 
 package br.ufrpe.assistech.negocio;
 
-import br.ufrpe.assistech.dados.RepositorioClientesArray;
+import br.ufrpe.assistech.dados.RepositorioCliente;
 import entityBeans.Cliente;
 
 /**
@@ -9,10 +9,10 @@ import entityBeans.Cliente;
  * @author alheirosb: CadastroCliente é uma Classe Controlador.
  */
 public class CadastroCliente {
-    private RepositorioClientesArray repositorio;
+    private RepositorioCliente repositorio;
     
     public CadastroCliente(){
-        this.repositorio = new RepositorioClientesArray(100);/*Cria, incialmente,
+        this.repositorio = new RepositorioCliente(100);/*Cria, incialmente,
                                                              um Repositorio de Clientes
                                                              com 100 contas de cliente.
                                                              **Ver construtor da Classe

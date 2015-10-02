@@ -34,7 +34,7 @@ public class RepositorioEquip {
         this.Equip[this.proxima] = c;
         this.proxima = proxima + 1;
     }
-    
+        
    private int procurarIndice(String serie) {
        int i = 0;
        boolean achou = false;
@@ -76,7 +76,7 @@ public class RepositorioEquip {
           
     }
    
-    public void remover(String serie) {
+    public boolean remover(String serie) {
         int i = this.procurarIndice(serie);
     
         if (i != this.proxima) {
@@ -85,10 +85,10 @@ public class RepositorioEquip {
         this.Equip[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        System.out.println("Equipamento " + serie + " removido");
+        return true;
         } else {
         
-        System.out.println("Equipamento não cadastrado.");
+        return false;
         
         }
     }
