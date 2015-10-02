@@ -38,12 +38,13 @@ public class CadastroCliente {
         return this.repositorio.existe(cpf);
     }
     
-    public void descadastrar(String cpf){ 
+    public boolean descadastrar(String cpf){ 
         Cliente c = this.repositorio.procurar(cpf);
         if(c != null){
             this.repositorio.remover(cpf);
+            return true;
         }else{
-            //Conta inexistente ou conta ainda ativa.
+           return false; //Conta inexistente ou conta ainda ativa.
         }
         
     }

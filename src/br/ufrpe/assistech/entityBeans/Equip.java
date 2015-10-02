@@ -61,11 +61,11 @@ public class Equip {
     
     public String toString(){
         String text = "";
-        text += "Marca :" + this.marca + "";
-        text += "Modelo :" +this.modelo + "";
-        text += "Caracteristica do Equipamento: " + this.caracteristica + "";
-        text += "Número de série :" + this.serie + "";
-        text += "Dono :" + this.cliente.toString() + "";
+        text += "Marca :" + this.marca + "\n";
+        text += "Modelo :" +this.modelo + "\n";
+        text += "Caracteristica do Equipamento: " + this.caracteristica + "\n";
+        text += "Número de série :" + this.serie + "\n";
+        text += "Dados do proprietario :\n" + this.cliente.toString() + "";
         return text; 
     }
     

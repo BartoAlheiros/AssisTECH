@@ -65,7 +65,7 @@ public class RepositorioCliente {
           
     }
    
-    public boolean remover(String cpf) {
+    public void remover(String cpf) {
         int i = this.procurarIndice(cpf);
      
         if (i != this.proxima) {
@@ -74,9 +74,9 @@ public class RepositorioCliente {
         this.cliente[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-       return true;
+       
         } else {
-        return false;
+      
        
         }
     }    

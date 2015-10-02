@@ -24,6 +24,10 @@ public class Cliente {
     public String getNome() {
         return nome;
     }
+    
+    public void setNome(String nome){
+        this.nome = nome;
+    }
 
     public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
@@ -62,11 +66,11 @@ public class Cliente {
     
     public String toString (){
         String text = "";
-        text += "Nome :" + this.nome + "";
-        text += "CPF :" + this.cpf + "";
-        text += "Endereço :" + this.endereco + "";
-        text += "Telefone celular :" + this.telefone1 + "";
-        text += "Telefone fixo :" + this.telefone2 + "";
+        text += "Nome :" + this.nome + "\n";
+        text += "CPF :" + this.cpf + "\n";
+        text += "Endereço :" + this.endereco + "\n";
+        text += "Telefone celular :" + this.telefone1 + "\n";
+        text += "Telefone fixo :" + this.telefone2 + "\n";
         text += "Email :" + this.email + "";
         return text;
     }

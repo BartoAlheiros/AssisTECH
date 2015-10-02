@@ -45,7 +45,7 @@ public class CadastrarOS {
     public void finalizarServico(String osNumber){ //método para descadastrar
                                                    //uma OS.
         OS d = this.repositorio.procurar(osNumber);
-        if(d != null && d.getAtiva() != true){
+        if(d != null && d.getNaoAtiva() == true){
             this.repositorio.remover(osNumber);
         }else{
             //a a OS ainda está ativa e não pode ser removida.
