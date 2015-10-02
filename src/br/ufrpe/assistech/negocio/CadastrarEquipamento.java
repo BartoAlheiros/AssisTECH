@@ -1,7 +1,7 @@
 
 package br.ufrpe.assistech.negocio;
 
-import entityBeans.Equip;
+import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.dados.RepositorioClientesArray;
 import br.ufrpe.assistech.dados.RepositorioEquip;
 

@@ -1,7 +1,7 @@
 
-package entityBeans;
+package br.ufrpe.assistech.entityBeans;
 
-import entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Cliente;
 
 /**
  *
@@ -12,10 +12,10 @@ public class Equip {
     private String marca;
     private String modelo;
     private String caracteristica;
-    private int serie;
+    private String serie;
     private Cliente cliente;
     
-    public Equip (String marca, String modelo, String caracteristica, int serie, Cliente cliente){
+    public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente){
         this.marca = marca;
         this.modelo = modelo;
         this.caracteristica = caracteristica;
@@ -47,7 +47,7 @@ public class Equip {
         this.caracteristica=caracteristica;
     }
     
-    public int getSerie(){
+    public String getSerie(){
         return serie;
     }
     

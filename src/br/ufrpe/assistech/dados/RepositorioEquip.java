@@ -5,7 +5,7 @@
  */
 package br.ufrpe.assistech.dados;
 
-import entityBeans.Equip;
+import br.ufrpe.assistech.entityBeans.Equip;
 
 /**
  *

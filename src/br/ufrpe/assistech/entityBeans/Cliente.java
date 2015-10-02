@@ -1,5 +1,5 @@
 
-package entityBeans;
+package br.ufrpe.assistech.entityBeans;
 
 
 public class Cliente {

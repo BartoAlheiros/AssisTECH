@@ -1,9 +1,9 @@
 
-package br.ufrpe.assistech;
+package br.ufrpe.assistech.gui;
 
 
 import br.ufrpe.assistech.dados.RepositorioClientesArray;
-import entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Cliente;
 import java.util.Scanner;
 
 
@@ -38,7 +38,7 @@ public class AssistechMain {
        
        Cliente c = new Cliente("Assis", "666.555.444-33");
        r.cadastrar(c);
-       boolean x = r.remover("666.555.444-3");
+       boolean x = r.remover("666.555.444-33");
        if (x == true) System.out.println("REMOVIDO COM SUCESSO");
        else System.out.println("CADASTRO NÃO EXISTENTE");
        
