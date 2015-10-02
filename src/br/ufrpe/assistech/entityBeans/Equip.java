@@ -1,7 +1,7 @@
 
-package entityBeans;
+package br.ufrpe.assistech.entityBeans;
 
-import entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Cliente;
 
 /**
  *

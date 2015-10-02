@@ -1,7 +1,7 @@
 
 package br.ufrpe.assistech.dados;
 
-import entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Cliente;
 
 
 public class RepositorioCliente {

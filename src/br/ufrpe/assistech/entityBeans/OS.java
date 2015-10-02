@@ -1,7 +1,7 @@
 
-package entityBeans;
+package br.ufrpe.assistech.entityBeans;
 
-import entityBeans.Equip;
+import br.ufrpe.assistech.entityBeans.Equip;
 
 
 public class OS {

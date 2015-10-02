@@ -1,9 +1,9 @@
 
-package br.ufrpe.assistech;
+package br.ufrpe.assistech.gui;
 
 
 import br.ufrpe.assistech.dados.RepositorioCliente;
-import entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Cliente;
 import java.util.Scanner;
 
 
