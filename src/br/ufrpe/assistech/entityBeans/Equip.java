@@ -15,7 +15,7 @@ public class Equip {
     private String serie;
     private Cliente cliente;
     
-    public Equip (String marca, String modelo, String caracteristica, String serie) {
+    public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente) {
         this.marca = marca;
         this.modelo = modelo;
         this.caracteristica = caracteristica;

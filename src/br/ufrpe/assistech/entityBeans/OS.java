@@ -14,7 +14,7 @@ public class OS {
     private String servico;   //ou não e assim poder eliminá-la ou não.
                                //
 LocalDate hoje = LocalDate.now();
-    public OS(String servico) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
+    public OS(String servico, Equip equipamento) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
         this.no = "0001";
         this.servico = servico;
         this.data = "03/10/2015";

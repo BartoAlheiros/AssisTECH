@@ -38,16 +38,22 @@ public class AssistechMain {
             case 1:
        Cliente c = new Cliente ("", "", "","","", "");
                 System.out.print("Dados do cliente :");                
-                System.out.print("Nome :");    c.setNome(input.nextLine());
-                System.out.print("CPF :");   c.setCpf(input.nextLine());
-                System.out.print("Endereço :");  c.setEndereco(input.nextLine());
-                System.out.print("Telefone Fixo :");  c.setTelefone1(input.nextLine());
-               System.out.print("Telefone celular :");c.setTelefone2 (input.nextLine());
-                System.out.print("Email :"); c.setEmail(input.nextLine());
+                System.out.print("Nome :");    
+                c.setNome(input.nextLine());
+                System.out.print("CPF :");   
+                c.setCpf(input.nextLine());
+                System.out.print("Endereço :");  
+                c.setEndereco(input.nextLine());
+                System.out.print("Telefone Fixo :");  
+                c.setTelefone1(input.nextLine());
+               System.out.print("Telefone celular :");
+               c.setTelefone2 (input.nextLine());
+                System.out.print("Email :"); 
+                c.setEmail(input.nextLine());
        c1.Cadastrar(c); 
                 break;
             case 2:
-                        Equip e = new Equip ("", "", "", "");
+                        Equip e = new Equip ("", "", "", "", c);
                 System.out.println("Dados do Equipamento");
                 System.out.println("Marca :");
                 e.setMarca(input.nextLine());
@@ -60,7 +66,7 @@ public class AssistechMain {
        ce.Cadastrar(e);
                 break;
             case 3:
-               OS o = new OS("");
+               OS o = new OS("", e);
                 System.out.println("Numéro de Ordem:" + o.getNo());
                 System.out.println("Serviço :");
                 o.setServico(input.nextLine());
