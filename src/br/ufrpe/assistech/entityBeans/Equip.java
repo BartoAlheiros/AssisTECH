@@ -59,6 +59,7 @@ public class Equip {
         return cliente;
     }
     
+    
     public String toString(){
         String text = "";
         text += "Marca :" + this.marca + "\n";
