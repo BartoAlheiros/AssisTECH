@@ -15,6 +15,10 @@ public class Equip {
     private String serie;
     private Cliente cliente;
     
+    public Equip(Cliente cliente){
+        this.cliente = cliente;
+    }
+    
     public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente) {
         this.marca = marca;
         this.modelo = modelo;

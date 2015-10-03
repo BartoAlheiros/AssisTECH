@@ -29,8 +29,8 @@ public class AssistechMain {
         System.out.println("5 - Deletar cliente");
         System.out.println("6 - Deletar Equipamento");
         System.out.println("7 - fechar os");
-       CadastroCliente c1 = new CadastroCliente();
-       CadastroEquipamento ce = new CadastroEquipamento ();
+        CadastroCliente c1 = new CadastroCliente();
+        CadastroEquipamento ce = new CadastroEquipamento ();
         CadastrarOS co = new CadastrarOS();
         
         int opt = input.nextInt();
@@ -38,7 +38,7 @@ public class AssistechMain {
         switch(opt){
         
             case 1:
-       Cliente c = new Cliente ("", "", "","","", "");
+                Cliente  c = new Cliente ();
                 System.out.println("Dados do cliente");                
                 System.out.println("");
                 System.out.println("Nome :");
@@ -49,14 +49,14 @@ public class AssistechMain {
                 c.setEndereco(input.next());
                 System.out.println("Telefone Fixo :");  
                 c.setTelefone1(input.next());
-               System.out.println("Telefone celular :");
-               c.setTelefone2(input.next());
+                System.out.println("Telefone celular :");
+                c.setTelefone2(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
-       c1.Cadastrar(c); 
+                c1.Cadastrar(c); 
                 System.out.println("Cliente Cadastrado com sucesso");
                 System.out.println("");
-       Equip e = new Equip ("", "", "", "", c);
+                Equip e = new Equip (c);//Criando um equipamento e preenchendo-o.
                 System.out.println("Dados do Equipamento");
                 System.out.println("");
                 System.out.println("Marca :");
@@ -68,51 +68,52 @@ public class AssistechMain {
                 System.out.println("Número de série :");
                 e.setSerie(input.next());
                 
-       ce.Cadastrar(e);
+                ce.Cadastrar(e);//Cadastrando o equipamento, utilizando o Construtor de equipamento
+                                //já isntanciado antes do switch.
                 System.out.println("Equipamento Cadastrado com Sucesso");
                 System.out.println("");
-               OS o = new OS("", e);
+                OS o = new OS(e);
                 System.out.println("Numéro de Ordem:" + o.getNo());
                 System.out.println("Serviço :");
                 o.setServico(input.next());
-                 System.out.println("projeção de entrega:" + o.getEntrega());
-       co.Cadastrar(o);
+                System.out.println("projeção de entrega:" + o.getEntrega());
+                co.Cadastrar(o);
               
             case 2:
                 System.out.println("Procurar com base no cliente");
                 System.out.println("Digite um CPF para a busca, no formato 000.000.000-00");
                 String aux = input.next();
-        System.out.println(c1.procurar(aux));
+                System.out.println(c1.procurar(aux));
               
             case 3:
                 System.out.println("Procurar com base no equipamento");
                 System.out.println("Digite um número de série para a busca");
                 String aux1 = input.next();
-        System.out.println(ce.procurar(aux1));
+                System.out.println(ce.procurar(aux1));
            
             case 4:
                 System.out.println("Procurar OS");
                 System.out.println("Digite o número da ordem de serviço");
                 String aux2 = input.next();
-         System.out.println(co.procurar(aux2));
+                System.out.println(co.procurar(aux2));
            
             case 5:
                 System.out.println("DELETAR CLIENTE - Digite um CPF para continuar, no formato 000.000.000-00");
-           boolean aux4 = c1.descadastrar(input.next());
-           if (aux4 == true) System.out.println("Cliente deletado da base de dados");
-           else System.out.println("ERROR!");       
+                boolean aux4 = c1.descadastrar(input.next());
+                if (aux4 == true) System.out.println("Cliente deletado da base de dados");
+                else System.out.println("ERROR!");       
           
             case 6:
                 System.out.println("DELETAR EQUIPAMENTO - Digite um número de série para continuar");
-           boolean aux5 = ce.descadastrar(input.next());
-           if (aux5 == true) System.out.println("Equipamento Deletado da base de dados");
-           else System.out.println("ERROR!"); 
+                boolean aux5 = ce.descadastrar(input.next());
+                if (aux5 == true) System.out.println("Equipamento Deletado da base de dados");
+                else System.out.println("ERROR!"); 
            
             case 7:
                 System.out.println("FECHAR OS - Digite o número da ordem para continuar");
-           boolean aux6 = co.finalizarServico(input.next());
-           if (aux6 == true) System.out.println("Ordem de serviço finalizada com sucesso");
-           else System.out.println("ERROR!"); 
+                boolean aux6 = co.finalizarServico(input.next());
+                if (aux6 == true) System.out.println("Ordem de serviço finalizada com sucesso");
+                else System.out.println("ERROR!"); 
                 break;
         }
         

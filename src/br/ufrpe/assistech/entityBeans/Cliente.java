@@ -10,9 +10,12 @@ public class Cliente {
     private String telefone2;
     private String endereco;
     private String email;
+     
+    public Cliente(){//Construtor padrão.
+        
+    }    
     
-
-     public Cliente(String nome, String cpf, String endereco, String telefone1, String telefone2, String email) {
+    public Cliente(String nome, String cpf, String endereco, String telefone1, String telefone2, String email) {
         this.cpf = cpf;
         this.nome = nome; 
         this.endereco = endereco;

@@ -13,7 +13,12 @@ public class OS {
     private boolean naoAtiva; // para o método descadastrar do controlador de OS saber se a OS está ativa
     private String servico;   //ou não e assim poder eliminá-la ou não.
                                //
-LocalDate hoje = LocalDate.now();
+    LocalDate hoje = LocalDate.now();
+    
+    public OS(Equip equipamento){
+        this.equipamento = equipamento;
+    }
+    
     public OS(String servico, Equip equipamento) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
         this.no = "0001";
         this.servico = servico;
