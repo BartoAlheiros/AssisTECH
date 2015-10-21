@@ -12,10 +12,10 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class CadastrarOS {
+public class CadastroOS {
     private RepositorioOS repositorio;
     
-    public CadastrarOS(){
+    public CadastroOS(){
         this.repositorio = new RepositorioOS(100);/*Cria, incialmente,
                                                              um Repositorio de OS
                                                              com 100 Ordens.

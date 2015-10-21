@@ -6,16 +6,17 @@ import br.ufrpe.assistech.dados.RepositorioCliente;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
-import br.ufrpe.assistech.negocio.CadastrarOS;
+import br.ufrpe.assistech.negocio.CadastroOS;
 import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class AssistechMain {
     
     
-    public static void Menu(){
+    public static void Menu() throws IOException{
     System.out.println("Bem vindo ao menu de testes AssisTECH!");
         System.out.println("Você deverá começar criando uma OS");
         System.out.println("Escolha uma opcão: ");
@@ -31,7 +32,7 @@ public class AssistechMain {
         System.out.println("7 - fechar os");
         CadastroCliente c1 = new CadastroCliente();
         CadastroEquipamento ce = new CadastroEquipamento ();
-        CadastrarOS co = new CadastrarOS();
+        CadastroOS co = new CadastroOS();
         
         int opt = input.nextInt();
         
@@ -39,15 +40,21 @@ public class AssistechMain {
         
             case 1:
                 Cliente  c = new Cliente ();
+                //Runtime.getRuntime().exec("clear");
+                System.out.println("             Nova OS              ");
+                System.out.println("");
                 System.out.println("Dados do cliente");                
                 System.out.println("");
                 System.out.println("Nome :");
                 c.setNome(input.next());
+                input.next();
                 System.out.println("CPF : ");
                 c.setCpf(input.next());
                 System.out.println("Endereço :");  
                 c.setEndereco(input.next());
-                System.out.println("Telefone Fixo :");  
+                input.next();
+                System.out.println("Telefone Fixo :"); 
+                input.next();
                 c.setTelefone1(input.next());
                 System.out.println("Telefone celular :");
                 c.setTelefone2(input.next());
@@ -121,7 +128,7 @@ public class AssistechMain {
     }
     
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
      
        Menu();
         /*Cliente: Nome, CPF, Endereço, Telefone1, Telefone2 e Email
@@ -138,7 +145,7 @@ public class AssistechMain {
        ce.Cadastrar(e);
           
        OS o = new OS ("0001", "02/10/2015", "19/10/2015", e);
-       CadastrarOS co = new CadastrarOS();
+       CadastroOS co = new CadastroOS();
        co.Cadastrar(o);
        
         //System.out.println(o); //imprimindo uma Ordem de Serviço

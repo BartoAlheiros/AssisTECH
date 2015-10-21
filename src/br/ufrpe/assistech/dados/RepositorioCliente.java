@@ -30,14 +30,15 @@ public class RepositorioCliente {
    private int procurarIndice(String cpf) {
        int i = 0;
        boolean achou = false;
+       
        while ((!achou) && (i < this.proxima)) {
             if (cpf.equals(this.cliente[i].getCpf())) {
-            achou = true;
+                achou = true;
             } else {
-            i = i + 1;
+                i = i + 1;
             }
-       
        }
+       
       return i;
     }
    
