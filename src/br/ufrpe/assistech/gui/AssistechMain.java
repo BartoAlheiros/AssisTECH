@@ -55,30 +55,51 @@ public class AssistechMain {
                 input.next();
                 System.out.println("Telefone Fixo :"); 
                 input.next();
-                c.setTelefone1(input.next());
+                c.setTelefoneFixo(input.next());
                 System.out.println("Telefone celular :");
-                c.setTelefone2(input.next());
+                c.setCelular(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
                 c1.Cadastrar(c); 
                 System.out.println("Cliente Cadastrado com sucesso");
                 System.out.println("");
-                Equip e = new Equip (c);//Criando um equipamento e preenchendo-o.
-                System.out.println("Dados do Equipamento");
-                System.out.println("");
-                System.out.println("Marca :");
-                e.setMarca(input.next());
-                System.out.println("Modelo :");
-                e.setModelo(input.next());
-                System.out.println("Caracteristica :");
-                e.setCaracteristica(input.next());
-                System.out.println("Número de série :");
-                e.setSerie(input.next());
                 
-                ce.Cadastrar(e);//Cadastrando o equipamento, utilizando o Construtor de equipamento
-                                //já isntanciado antes do switch.
-                System.out.println("Equipamento Cadastrado com Sucesso");
-                System.out.println("");
+                Equip e = new Equip (c);//Criando um equipamento e preenchendo-o.
+                boolean opcao = false;
+                String opcao2;
+                
+                do{
+                    System.out.println("Deseja cadastrar equipamento?");
+                    
+                    opcao2 = input.next();
+                    
+                    if(opcao2.equals("S") == true | opcao2.equals("N") == true  |
+                        opcao2.equals("s") == true  | opcao2.equals("s") == true){
+                        System.out.println("Dados do Equipamento");
+                        System.out.println("");
+                        System.out.println("Marca :");
+                        e.setMarca(input.next());
+                        System.out.println("Modelo :");
+                        e.setModelo(input.next());
+                        System.out.println("Caracteristica :");
+                        e.setCaracteristica(input.next());
+                        System.out.println("Número de série :");
+                        e.setSerie(input.next());
+
+                        ce.Cadastrar(e);//Cadastrando o equipamento, utilizando o Construtor de equipamento
+                                        //já isntanciado antes do switch.
+                        System.out.println("Equipamento Cadastrado com Sucesso");
+                        System.out.println("");
+                    }
+                           
+                    else{
+                         System.out.println("Comando inválido, por favor, digite o comando correto.");
+                        
+                    }
+                        
+                }while(opcao2.equals("S") == false & opcao2.equals("N") == false  &
+                        opcao2.equals("s") == false  & opcao2.equals("s") == false );//CadastroEquip
+                
                 OS o = new OS(e);
                 System.out.println("Numéro de Ordem:" + o.getNo());
                 System.out.println("Serviço :");

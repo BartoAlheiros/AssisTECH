@@ -42,14 +42,6 @@ public class RepositorioCliente {
       return i;
     }
    
-    public boolean existe(String cpf){
-       boolean existe = false;
-       int indice = this.procurarIndice(cpf);
-       if (indice != proxima){
-           existe = true;
-       }
-       return existe;
-    }
     public Cliente procurar(String cpf){        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
@@ -59,21 +51,30 @@ public class RepositorioCliente {
         Cliente resultado = null;
         
         if (i != this.proxima) {
-        resultado = this.cliente[i];
+            resultado = this.cliente[i];
         }
         
-        return resultado;
+        return resultado;//obj Cliente procurado.
           
+    }
+    
+    public boolean existe(String cpf){
+        boolean existe = false;
+        int indice = this.procurarIndice(cpf);
+        if (indice != proxima){
+           existe = true;
+       }
+       return existe;
     }
    
     public void remover(String cpf) {
         int i = this.procurarIndice(cpf);
      
         if (i != this.proxima) {
-        String nome = this.cliente[i].getNome();
-        this.cliente[i] = this.cliente[this.proxima - 1];
-        this.cliente[this.proxima - 1] = null;
-        this.proxima = this.proxima - 1;
+            String nome = this.cliente[i].getNome();
+            this.cliente[i] = this.cliente[this.proxima - 1];
+            this.cliente[this.proxima - 1] = null;
+            this.proxima = this.proxima - 1;
     
        
         } else {
