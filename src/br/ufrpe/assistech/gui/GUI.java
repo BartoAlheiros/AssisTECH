@@ -1,22 +1,30 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.ufrpe.assistech.gui;
 
-
-import br.ufrpe.assistech.dados.RepositorioCliente;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
-import br.ufrpe.assistech.negocio.CadastroOS;
 import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
-import java.io.IOException;
+import br.ufrpe.assistech.negocio.CadastroOS;
 import java.util.Scanner;
 
-
-public class AssistechMain {
+/**
+ *
+ * @author alheirosb
+ */
+public class GUI {
+    CadastroCliente c1 = new CadastroCliente();
+    CadastroEquipamento ce = new CadastroEquipamento();
+    CadastroOS co = new CadastroOS();
+    Cliente c = new Cliente();
+    //GUI gui = new GUI();
     
-    
-    /*public static void Menu() throws IOException{
+    public void mostrarMenu(){
         System.out.println("Bem vindo ao menu de testes AssisTECH!");
         System.out.println("Você deverá começar criando uma OS");
         System.out.println("Escolha uma opcão: ");
@@ -30,11 +38,6 @@ public class AssistechMain {
         System.out.println("5 - Deletar cliente");
         System.out.println("6 - Deletar Equipamento");
         System.out.println("7 - fechar os");
-        
-        CadastroCliente c1 = new CadastroCliente();
-        CadastroEquipamento ce = new CadastroEquipamento();
-        CadastroOS co = new CadastroOS();
-        Cliente c = new Cliente();
         
         int opt = input.nextInt();
         
@@ -113,7 +116,9 @@ public class AssistechMain {
                 o.setServico(input.next());
                 System.out.println("projeção de entrega:" + o.getEntrega());
                 co.Cadastrar(o);
-                break;
+                
+                this.mostrarMenu();
+                //gui.mostrarMenu();
                 
             case 2:
                 /*System.out.println("             Nova OS              ");
@@ -135,7 +140,7 @@ public class AssistechMain {
                 c.setCelular(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
-                c1.Cadastrar(c); 
+                c1.Cadastrar(c);*/ 
                 
                 //Menu();
                 
@@ -181,43 +186,5 @@ public class AssistechMain {
                 else System.out.println("ERROR!"); 
                 break;
         }
-        
-    
-    }*/
-    
-    
-    public static void main(String[] args){
-     
-        GUI gui = new GUI();
-
-        gui.mostrarMenu();
-
-       //Menu();
-        /*Cliente: Nome, CPF, Endereço, Telefone1, Telefone2 e Email
-        Equipamento: Marca, Modelo, Caracteristica, numero de série e um Cliente
-        OS: Número da OS, Data de entrada do aparelho, Previsão de entrega e um Equipamento
-        */        
-       /*Cliente c = new Cliente ("Assis", "111.111.111-11", "Rua Manuel de Medeiros, 45, Dois Irmãos, Recife - PE","81988888888","81999999999", "assistech@email.com");
-       c.setNome("Assis Silva");
-        CadastroCliente c1 = new CadastroCliente();
-       c1.Cadastrar(c);
-       
-       Equip e = new Equip ("HP", "EliteOne800", "PC - All in one", "11111111", c);
-       CadastroEquipamento ce = new CadastroEquipamento ();
-       ce.Cadastrar(e);
-          
-       OS o = new OS ("0001", "02/10/2015", "19/10/2015", e);
-       CadastroOS co = new CadastroOS();
-       co.Cadastrar(o);
-       
-        //System.out.println(o); //imprimindo uma Ordem de Serviço
- 
-        System.out.println(c1.procurar("111.111.111-11"));    //procurando e retornando informações do cliente 
-      boolean aux = c1.descadastrar("111.111.111-11");        
-       if (aux == true) System.out.println("Conta Deletada");
-       else System.out.println("ERROR!");
-       */
-       
     }
-    
 }
