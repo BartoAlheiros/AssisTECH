@@ -5,6 +5,8 @@
  */
 package br.ufrpe.assistech.dados;
 
+import br.ufrpe.assistech.entityBeans.Cliente;
+
 /**
  *
  * @author alheirosb
@@ -14,6 +16,7 @@ public abstract class Repositorio {
     private int proximo;
     
     public Repositorio(int tamanho){
+        this.objeto = new Object[tamanho];
         this.proximo = 0;
     }
     
