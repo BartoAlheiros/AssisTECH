@@ -22,7 +22,6 @@ public class GUI {
     CadastroEquipamento ce = new CadastroEquipamento();
     CadastroOS co = new CadastroOS();
     Cliente c = new Cliente();
-    //GUI gui = new GUI();
     
     public void mostrarMenu(){
         System.out.println("Bem vindo ao menu de testes AssisTECH!");
@@ -121,29 +120,6 @@ public class GUI {
                 //gui.mostrarMenu();
                 
             case 2:
-                /*System.out.println("             Nova OS              ");
-                System.out.println("");
-                System.out.println("Dados do cliente");                
-                System.out.println("");
-                System.out.println("Nome :");
-                c.setNome(input.next());
-                input.next();
-                System.out.println("CPF : ");
-                c.setCpf(input.next());
-                System.out.println("Endereço :");  
-                c.setEndereco(input.next());
-                input.next();
-                System.out.println("Telefone Fixo :"); 
-                input.next();
-                c.setTelefoneFixo(input.next());
-                System.out.println("Telefone celular :");
-                c.setCelular(input.next());
-                System.out.println("Email :"); 
-                c.setEmail(input.next());
-                c1.Cadastrar(c);*/ 
-                
-                //Menu();
-                
                 
                 System.out.println("Procurar com base no cliente");
                 System.out.println("Digite um CPF para a busca, no formato 000.000.000-00");
