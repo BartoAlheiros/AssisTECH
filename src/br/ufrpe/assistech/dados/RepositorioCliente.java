@@ -4,7 +4,7 @@ package br.ufrpe.assistech.dados;
 import br.ufrpe.assistech.entityBeans.Cliente;
 
 
-public class RepositorioCliente {
+public class RepositorioCliente extends Repositorio{
     private Cliente[] cliente;
     private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
@@ -14,20 +14,20 @@ public class RepositorioCliente {
                         */
     
     public RepositorioCliente(int tamanho){
-        this.cliente = new Cliente[tamanho];
-        this.proxima = 0;
+         this.cliente = new Cliente[tamanho];
+         this.proxima = 0;
     }
     
-    public void cadastrar(Cliente c){           /*1 - atualiza a variavel proxima
+    /*public void cadastrar(Cliente c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma conta
-                                                */
+                                                
         this.cliente[this.proxima] = c;
         this.proxima = proxima + 1;
-    }
+    }*/
     
-   private int procurarIndice(String cpf) {
+   public int procurarIndice(String cpf) {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
@@ -80,5 +80,13 @@ public class RepositorioCliente {
        
         }
     }    
+
+    @Override
+    public void cadastrar(Object o) {
+        this.cliente[this.proxima] = (Cliente) o;
+        this.proxima = proxima + 1;
+    }
+
+ 
 }
 

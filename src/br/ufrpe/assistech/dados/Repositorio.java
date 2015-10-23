@@ -15,10 +15,7 @@ public abstract class Repositorio {
     private Object[] objeto;
     private int proximo;
     
-    public Repositorio(int tamanho){
-        this.objeto = new Object[tamanho];
-        this.proximo = 0;
-    }
+    
     
     public abstract void cadastrar(Object o);           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
