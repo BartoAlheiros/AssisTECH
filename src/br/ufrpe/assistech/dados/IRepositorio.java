@@ -5,31 +5,24 @@
  */
 package br.ufrpe.assistech.dados;
 
-import br.ufrpe.assistech.entityBeans.Cliente;
-
 /**
  *
  * @author alheirosb
  */
-public abstract class Repositorio {
-    private Object[] objeto;
-    private int proximo;
-    
-    
-    
-    public abstract void cadastrar(Object o);   /*para indicar a proxima            
+public interface IRepositorio {
+    void cadastrar(Object o);   /*para indicar a proxima            
                                                 /*posição vazia do Array.    
                                                 *2 - Método que cadastra uma conta
                                                 */
         
     
-    public abstract int procurarIndice(String str);
+    int procurarIndice(String str);
        
    
-    public abstract Object procurar(String str);
+    Object procurar(String str);
     
-    public abstract boolean existe(String str);
+    boolean existe(String str);
    
-    public abstract void remover(String str);    
+    abstract void remover(String str);    
 }
 

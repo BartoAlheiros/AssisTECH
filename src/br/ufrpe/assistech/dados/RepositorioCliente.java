@@ -4,7 +4,7 @@ package br.ufrpe.assistech.dados;
 import br.ufrpe.assistech.entityBeans.Cliente;
 
 
-public class RepositorioCliente extends Repositorio{
+public class RepositorioCliente implements IRepositorio{
     private Cliente[] cliente;
     private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
