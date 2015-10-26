@@ -50,8 +50,9 @@ public class GUI {
                 System.out.println("Dados do cliente");                
                 System.out.println("");
                 System.out.println("Nome :");
-                c.setNome(input.next());
-                input.next();
+                String nome = input.next();
+                c.setNome(nome);
+                input.nextLine();
                 System.out.println("CPF : ");
                 c.setCpf(input.next());
                 System.out.println("Endereço :");  
