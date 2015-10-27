@@ -20,7 +20,7 @@ public class CadastroCliente {
                                                              */
     }
     
-    public void Cadastrar(Cliente c){
+    public void cadastrar(Cliente c){
         if(c != null && !this.existe(c.getCpf())){
             this.repositorio.cadastrar(c);
         }else{

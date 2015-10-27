@@ -20,7 +20,7 @@ public class CadastroEquipamento {
                                                              */
     }
     
-    public void Cadastrar(Equip a){
+    public void cadastrar(Equip a){
         if(a != null && !this.existe(a.getSerie())){
             this.repositorio.cadastrar(a);
         }else{
@@ -34,8 +34,8 @@ public class CadastroEquipamento {
                                                // de procurar a conta para o repositório.
     }
     
-     public boolean existe(String cpf){
-        return this.repositorio.existe(cpf);
+     public boolean existe(String serie){
+        return this.repositorio.existe(serie);
     }
     
     public boolean descadastrar(String serie){ 

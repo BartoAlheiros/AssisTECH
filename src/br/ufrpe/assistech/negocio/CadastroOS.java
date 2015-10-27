@@ -24,7 +24,7 @@ public class CadastroOS {
                                                              */
     }
     
-    public void Cadastrar(OS o){
+    public void cadastrar(OS o){
         if( o!= null && !this.existe(o.getNo())){
             this.repositorio.cadastrar(o);
         }else{
