@@ -8,14 +8,14 @@ public class Cliente {
     private String nome;
     private String telefoneFixo;
     private String celular;
-    private String endereco;
+    private Endereço endereco;
     private String email;
      
     public Cliente(){//Construtor padrão.
         
     }    
     
-    public Cliente(String nome, String cpf, String endereco, String telefoneFixo, String celular, String email) {
+    public Cliente(String nome, String cpf, Endereço endereco, String telefoneFixo, String celular, String email) {
         this.cpf = cpf;
         this.nome = nome; 
         this.endereco = endereco;
@@ -40,9 +40,7 @@ public class Cliente {
         this.celular = celular;
     }
     
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+    
 
     public String getTelefoneFixo() {
         return telefoneFixo;
@@ -58,9 +56,8 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
+    
+    
     
     public void setEmail(String email){
         this.email = email;
@@ -74,7 +71,7 @@ public class Cliente {
         String text = "";
         text += "Nome :" + this.nome + "\n";
         text += "CPF :" + this.cpf + "\n";
-        text += "Endereço :" + this.endereco + "\n";
+        text += "Endereço :" + endereco.toString();
         text += "Telefone celular :" + this.telefoneFixo + "\n";
         text += "Telefone fixo :" + this.celular + "\n";
         text += "Email :" + this.email + "";

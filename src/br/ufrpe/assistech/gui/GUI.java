@@ -6,6 +6,7 @@
 package br.ufrpe.assistech.gui;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.entityBeans.Endereço;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
 import br.ufrpe.assistech.negocio.CadastroCliente;
@@ -22,6 +23,7 @@ public class GUI {
     CadastroEquipamento ce = new CadastroEquipamento();
     CadastroOS co = new CadastroOS();
     Cliente c = new Cliente();
+    Endereço e = new Endereço();
     
     public void mostrarMenu(){
         System.out.println("Bem vindo ao menu de testes AssisTECH!");
@@ -55,8 +57,21 @@ public class GUI {
                 input.nextLine();
                 System.out.println("CPF : ");
                 c.setCpf(input.next());
-                System.out.println("Endereço :");  
-                c.setEndereco(input.next());
+                System.out.println("Endereço :"); 
+                System.out.println("Rua :");        
+                e.setRua(input.next());            
+                input.next();
+                System.out.println("Número :");     
+                e.setNumero(input.next());          
+                input.next();
+                System.out.println("Bairro :");     
+                e.setBairro(input.next());          
+                input.next();
+                System.out.println("Cidade :");     
+                e.setCidade(input.next());          
+                input.next();
+                System.out.println("Estado :");     
+                e.setEstado(input.next());          
                 input.next();
                 System.out.println("Telefone Fixo :"); 
                 input.next();
@@ -65,7 +80,7 @@ public class GUI {
                 c.setCelular(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
-                c1.Cadastrar(c); 
+                c1.cadastrar(c); 
                 if(c != null){
                     System.out.println("Cliente Cadastrado com sucesso");
                     System.out.println("");
@@ -94,7 +109,7 @@ public class GUI {
                         System.out.println("Número de série :");
                         e.setSerie(input.next());
 
-                        ce.Cadastrar(e);//Cadastrando o equipamento, utilizando o Construtor de equipamento
+                        ce.cadastrar(e);//Cadastrando o equipamento, utilizando o Construtor de equipamento
                                         //já isntanciado antes do switch.
                         System.out.println("Equipamento Cadastrado com Sucesso");
                         System.out.println("");    
@@ -115,7 +130,7 @@ public class GUI {
                 System.out.println("Serviço :");
                 o.setServico(input.next());
                 System.out.println("projeção de entrega:" + o.getEntrega());
-                co.Cadastrar(o);
+                co.cadastrar(o);
                 
                 this.mostrarMenu();
                 //gui.mostrarMenu();
