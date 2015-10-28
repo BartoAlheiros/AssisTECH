@@ -3,6 +3,8 @@ package br.ufrpe.assistech.negocio;
 
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.dados.RepositorioEquip;
+import br.ufrpe.assistech.dados.RepositorioOS;
+import br.ufrpe.assistech.entityBeans.OS;
 
 /**
  *
@@ -41,6 +43,8 @@ public class CadastroEquipamento {
     public boolean descadastrar(String serie){ 
         Equip a = this.repositorio.procurar(serie);
         if(a != null){
+            for(OS eqp : ArrayOS){
+            if()
             this.repositorio.remover(serie);
             return true;
         }else{

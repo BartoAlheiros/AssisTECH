@@ -14,6 +14,7 @@ public class Equip {
     private String caracteristica;
     private String serie;
     private Cliente cliente;
+    private int qtdOS=0;
     
     public Equip(Cliente cliente){
         this.cliente = cliente;
@@ -25,6 +26,14 @@ public class Equip {
         this.caracteristica = caracteristica;
         this.serie = serie;
         this.cliente = cliente;
+    }
+    
+     public int getQtdOS(){
+        return qtdOS;
+    }
+    
+    public void setQtdOS(int qtd){
+        this.qtdOS=qtd;
     }
     
     public String getMarca (){

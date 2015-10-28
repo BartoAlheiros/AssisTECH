@@ -10,6 +10,7 @@ public class Cliente {
     private String celular;
     private Endereço endereco;
     private String email;
+    private int qtdOS=0;
      
     public Cliente(){//Construtor padrão.
         
@@ -22,6 +23,14 @@ public class Cliente {
         this.telefoneFixo = telefoneFixo;
         this.celular = celular;
         this.email = email;
+    }
+    
+    public int getQtdOS(){
+        return qtdOS;
+    }
+    
+    public void setQtdOS(int qtd){
+        this.qtdOS=qtd;
     }
     
     public String getNome() {

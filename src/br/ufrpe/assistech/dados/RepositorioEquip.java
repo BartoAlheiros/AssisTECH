@@ -13,8 +13,8 @@ import br.ufrpe.assistech.entityBeans.Equip;
  */
 public class RepositorioEquip {
     
-    private Equip[] Equip;
-    private int proxima;/*proximo Equipamento,
+    private Equip[] Equip; 
+   private int proxima;/*proximo Equipamento,
                         *dentro do array de Equip, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe

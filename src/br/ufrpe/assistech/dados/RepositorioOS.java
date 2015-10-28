@@ -13,25 +13,25 @@ import br.ufrpe.assistech.entityBeans.OS;
  */
 public class RepositorioOS {
     
-    private OS[] OS;
-    private int proxima;/*proxima conta de OS,
-                        *dentro do array de OS, que será criado
+    private OS[] ArrayOS;
+    private int proxima;/*proxima conta de ArrayOS,
+                        *dentro do array de ArrayOS, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
                         *RepositorioOS, abaixo.
                         */
     
     public RepositorioOS(int tamanho){
-        this.OS = new OS[tamanho];
+        this.ArrayOS = new OS[tamanho];
         this.proxima = 0;
     }
     
     public void cadastrar(OS c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
-                                                *2 - Método que cadastra uma OS
+                                                *2 - Método que cadastra uma ArrayOS
                                                 */
-        this.OS[this.proxima] = c;
+        this.ArrayOS[this.proxima] = c;
         this.proxima = proxima + 1;
     }
     
@@ -39,7 +39,7 @@ public class RepositorioOS {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
-            if (no.equals(this.OS[i].getNo())) {
+            if (no.equals(this.ArrayOS[i].getNo())) {
             achou = true;
             } else {
             i = i + 1;
@@ -58,16 +58,16 @@ public class RepositorioOS {
        return existe;
     }
    
-    public OS procurar(String no){        /*procura uma OS, recebendo
+    public OS procurar(String no){        /*procura uma ArrayOS, recebendo
                                                 *como parâmetro o número dessa
-                                                *OS.
+                                                *ArrayOS.
                                                 */
      
         int i = this.procurarIndice(no);
         OS resultado = null;
         
         if (i != this.proxima) {
-        resultado = this.OS[i];
+        resultado = this.ArrayOS[i];
         }
         
         return resultado;
@@ -79,8 +79,8 @@ public class RepositorioOS {
     
         if (i != this.proxima) {
         
-        this.OS[i] = this.OS[this.proxima - 1];
-        this.OS[this.proxima - 1] = null;
+        this.ArrayOS[i] = this.ArrayOS[this.proxima - 1];
+        this.ArrayOS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
         
