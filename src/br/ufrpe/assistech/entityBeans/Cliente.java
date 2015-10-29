@@ -8,7 +8,7 @@ public class Cliente {
     private String nome;
     private String telefoneFixo;
     private String celular;
-    private Endereço endereco;
+    //private Endereço endereco;
     private String email;
     private int qtdOS=0;
      
@@ -16,14 +16,22 @@ public class Cliente {
         
     }    
     
-    public Cliente(String nome, String cpf, Endereço endereco, String telefoneFixo, String celular, String email) {
+    public Cliente(String nome, String cpf, /*Endereço endereco,*/ String telefoneFixo, String celular, String email) {
         this.cpf = cpf;
         this.nome = nome; 
-        this.endereco = endereco;
+        //this.endereco = endereco;
         this.telefoneFixo = telefoneFixo;
         this.celular = celular;
         this.email = email;
     }
+    
+    //public Endereço getEndereco(){
+    //    return endereco;
+    //}
+    
+    //public void setEndereco(Endereço end){
+    //    this.endereco=end;
+    //}
     
     public int getQtdOS(){
         return qtdOS;
@@ -80,7 +88,7 @@ public class Cliente {
         String text = "";
         text += "Nome :" + this.nome + "\n";
         text += "CPF :" + this.cpf + "\n";
-        text += "Endereço :" + endereco.toString();
+        //text += "Endereço :" + endereco.toString();
         text += "Telefone celular :" + this.telefoneFixo + "\n";
         text += "Telefone fixo :" + this.celular + "\n";
         text += "Email :" + this.email + "";

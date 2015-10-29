@@ -15,6 +15,7 @@ import br.ufrpe.assistech.entityBeans.Equip;
  */
 public class CadastroEndereco {
     
+   /* CLASSE EM CONSTRUÇÃO 
     private RepositorioEndereco repositorio;
     
     public void cadastrar(Equip a){
@@ -24,5 +25,5 @@ public class CadastroEndereco {
             
         }
         
-    }
+    }*/
 }

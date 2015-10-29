@@ -2,6 +2,7 @@
 package br.ufrpe.assistech.negocio;
 
 import br.ufrpe.assistech.dados.RepositorioCliente;
+//import br.ufrpe.assistech.dados.RepositorioEndereco;
 import br.ufrpe.assistech.entityBeans.Cliente;
 
 /**
@@ -10,9 +11,12 @@ import br.ufrpe.assistech.entityBeans.Cliente;
  */
 public class CadastroCliente {
     private RepositorioCliente repositorio;
+//    private RepositorioEndereco repositorio2;
     
     public CadastroCliente(){
-        this.repositorio = new RepositorioCliente(100);/*Cria, incialmente,
+        this.repositorio = new RepositorioCliente(100);
+       // this.repositorio2 = new RepositorioEndereco(100);
+                                                            /*Cria, incialmente,
                                                              um Repositorio de Clientes
                                                              com 100 contas de cliente.
                                                              **Ver construtor da Classe
@@ -23,6 +27,7 @@ public class CadastroCliente {
     public void cadastrar(Cliente c){
         if(c != null && !this.existe(c.getCpf())){
             this.repositorio.cadastrar(c);
+            //this.repositorio2.cadastrar(c.getEndereco());
         }else{
             
         }
@@ -44,6 +49,7 @@ public class CadastroCliente {
         if(c != null){
             if (c.getQtdOS() > 0) {
             this.repositorio.remover(cpf);
+            //this.repositorio2.remover(c.getEndereco());
             aux = true;
             }else{
                 aux = false; //OS aberta em nome do cliente

@@ -10,7 +10,7 @@ package br.ufrpe.assistech.entityBeans;
  * @author Michel
  */
 public class Endereço {
-    
+   /* 
     private String rua;
     private String numero;
     private String bairro;
@@ -80,5 +80,5 @@ public class Endereço {
         text += getCidade() + "-" + getEstado() + "\n";
  
         return text;
-    }
+    }*/
 }
