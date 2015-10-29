@@ -11,10 +11,10 @@ import br.ufrpe.assistech.entityBeans.Equip;
  *
  * @author Michel
  */
-public class RepositorioEquip {
+public class RepositorioEquip implements IRepositorio {
     
     private Equip[] Equip; 
-   private int proxima;/*proximo Equipamento,
+    private int proxima;/*proximo Equipamento,
                         *dentro do array de Equip, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
@@ -26,16 +26,18 @@ public class RepositorioEquip {
         this.proxima = 0;
     }
     
-    public void cadastrar(Equip c){           /*1 - atualiza a variavel proxima
+    @Override
+    public void cadastrar(Object c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma conta
                                                 */
-        this.Equip[this.proxima] = c;
+        this.Equip[this.proxima] = (Equip) c;
         this.proxima = proxima + 1;
     }
         
-   private int procurarIndice(String serie) {
+    @Override
+   public int procurarIndice(String serie) {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
@@ -51,6 +53,7 @@ public class RepositorioEquip {
       return i;
     }
    
+    @Override
     public boolean existe(String serie){
        boolean existe = false;
        int indice = this.procurarIndice(serie);
@@ -60,6 +63,7 @@ public class RepositorioEquip {
        return existe;
     }
    
+    @Override
     public Equip procurar(String serie){        /*procura um Equipamento, recebendo
                                                 *como parâmetro o número de serie desse
                                                 *equipamento.
@@ -76,6 +80,7 @@ public class RepositorioEquip {
           
     }
    
+    @Override
     public void remover(String serie) {
         int i = this.procurarIndice(serie);
     
@@ -92,4 +97,6 @@ public class RepositorioEquip {
         
         }
     }
+
+  
 }
