@@ -28,7 +28,7 @@ public class GUI{
     Cliente c = new Cliente();
     Endereço e = new Endereço();
     
-    Controlador u = Controlador.getInstance();
+    Controlador u = Controlador.getInstance();//utilizando a fachada.
     
     
     
@@ -66,7 +66,7 @@ public class GUI{
                 input.nextLine();
                 System.out.println("CPF : ");
                 c.setCpf(input.next());
-                System.out.println("Endereço :"); 
+                System.out.println("-- CadastroEndereço--"); 
                 System.out.println("Rua :");        
                 e.setRua(input.next());            
                 input.next();
@@ -89,7 +89,9 @@ public class GUI{
                 c.setCelular(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
-                c1.cadastrar(c); 
+                u.cadastrarCliente(c);//cadastrou cliente no cadastrarCliente da fachada.(Cotnrolador).
+                
+                
                 if(c != null){
                     System.out.println("Cliente Cadastrado com sucesso");
                     System.out.println("");

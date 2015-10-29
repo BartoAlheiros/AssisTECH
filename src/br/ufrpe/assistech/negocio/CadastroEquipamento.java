@@ -11,7 +11,8 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public class CadastroEquipamento {
-        private RepositorioEquip repositorio;
+    
+    private RepositorioEquip repositorio;
     
     public CadastroEquipamento(){
         this.repositorio = new RepositorioEquip(100);/*Cria, incialmente,
