@@ -33,10 +33,10 @@ public class RepositorioOS {
                                                 *2 - Método que cadastra uma ArrayOS
                                                 */
         this.ArrayOS[this.proxima] = c;
-        this.proxima = proxima + 1;
-                Equip.cliente.setQtdOS((Equip.cliente.getQtdOS()) +1);
-                OS.equipamento.setQtdOS((OS.equipamento.getQtdOS()) +1);
-        
+       
+                this.ArrayOS[this.proxima].getEquipamento().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getQtdOS()) +1);
+                this.ArrayOS[this.proxima].getEquipamento().getCliente().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getCliente().getQtdOS()) +1);
+         this.proxima = proxima + 1;
     }
     
    private int procurarIndice(String no) {
@@ -82,13 +82,13 @@ public class RepositorioOS {
         int i = this.procurarIndice(no);
     
         if (i != this.proxima) {
-        
+        this.ArrayOS[this.proxima].getEquipamento().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getQtdOS()) -1);
+        this.ArrayOS[this.proxima].getEquipamento().getCliente().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getCliente().getQtdOS()) -1);
         this.ArrayOS[i] = this.ArrayOS[this.proxima - 1];
         this.ArrayOS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-                Equip.cliente.setQtdOS((Equip.cliente.getQtdOS()) -1);
-                OS.equipamento.setQtdOS((OS.equipamento.getQtdOS()) -1);
+              
         } else {
         
         

@@ -13,12 +13,13 @@ import br.ufrpe.assistech.entityBeans.Equip;
  * @author alheirosb
  */
 public abstract class Repositorio {
-    protected Object[] objeto;
+    /*protected Object[] objeto;
     protected int proximo;
     
 
     public Repositorio(int tamanho){
-         this.objeto = new Object[tamanho];
+         this.objeto = new Object[tamanho];         *****CLASSE ABSTRATA NÃO UTILIZADA
+                                                         POR NÃO SER RESTRITAMENTE NECESSÁria*****
          this.proximo = 0;
     }
     
@@ -31,12 +32,12 @@ public abstract class Repositorio {
         this.proxima = proxima + 1;
     }*/
     
-     public abstract void inutil(); 
+     /*public abstract void inutil(); 
   
      public void cadastrar(Object obj) {
         this.objeto[this.proximo] = (Object) obj;
         this.proximo = proximo + 1;
-    }
+    }*/
 }
 
 
