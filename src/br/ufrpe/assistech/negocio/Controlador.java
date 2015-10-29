@@ -13,59 +13,68 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class Controlador {
+public class Controlador implements IControlador {
     //Atributos como referência 
     private CadastroCliente clientes;
     private CadastroEquipamento equipamentos;
     private CadastroOS ordens;
     private static Controlador instance;
     
-    public Controlador () {
+    private Controlador () {
         //Contrutor privado para garantir que não haja instâncias fora da classe
         this.clientes = new CadastroCliente();
         this.equipamentos = new CadastroEquipamento();
         this.ordens = new CadastroOS();
     }
     
-    public static Controlador getInstace(){ //Singleton
+    public static Controlador getInstance(){ //Singleton
         if (instance == null) {
             instance = new Controlador();
         }
         return instance;          
     }
     //Chamada de Métodos 
+    @Override
     public void cadastrarCliente (Cliente c) {
         this.clientes.cadastrar(c);
     }
     
+    @Override
     public void cadastrarEquipamento (Equip e) {
         this.equipamentos.cadastrar(e);
     }
     
+    @Override
     public void gerarOS (OS o) {
         this.ordens.cadastrar(o);
     }
 
+    @Override
     public Cliente procurarCliente(String cpf){
         return this.clientes.procurar(cpf);
     }
     
+    @Override
     public Equip procurarEquipamento(String serie) {
         return this.equipamentos.procurar(serie);
     }
     
+    @Override
     public OS procurarOrdem (String no) {
         return this.ordens.procurar(no);
     }
     
+    @Override
     public void descadastrarCliente (String cpf) {
         this.clientes.descadastrar(cpf);
     }
     
+    @Override
     public void descadastraEquipamento (String serie) {
         this.equipamentos.descadastrar(serie);
     }
     
+    @Override
     public void encerrarOS (String no) {
         this.ordens.finalizarServico(no);
     }

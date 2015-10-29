@@ -13,20 +13,25 @@ import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
 import br.ufrpe.assistech.negocio.CadastroOS;
 import br.ufrpe.assistech.negocio.Controlador;
+import br.ufrpe.assistech.negocio.IControlador;
 import java.util.Scanner;
+//import br.ufrpe.assistech.negocio;
 
 /**
  *
  * @author alheirosb
  */
-public class GUI {
+public class GUI{
     CadastroCliente c1 = new CadastroCliente();
     CadastroEquipamento ce = new CadastroEquipamento();
     CadastroOS co = new CadastroOS();
     Cliente c = new Cliente();
     Endereço e = new Endereço();
     
-    Controlador u = new Controlador();
+    Controlador u = Controlador.getInstance();
+    
+    
+    
     
     
     public void mostrarMenu(){

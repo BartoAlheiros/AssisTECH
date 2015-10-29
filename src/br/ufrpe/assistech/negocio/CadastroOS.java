@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class CadastroOS {
+public class CadastroOS  {
     private RepositorioOS repositorio;
     
     public CadastroOS(){
