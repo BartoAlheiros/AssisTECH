@@ -9,7 +9,7 @@ public class OS {
     private String no;//número da OS
     private String data; //Paara datas será usada a  API Java.Time, que usa tipo Double, tipo String usado temporariamente para testes
     private String entrega;
-    private Equip equipamento;
+    public Equip equipamento;
     private boolean naoAtiva; // para o método descadastrar do controlador de OS saber se a OS está ativa
     private String servico;   //ou não e assim poder eliminá-la ou não.
                                //

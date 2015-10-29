@@ -13,7 +13,7 @@ public class Equip {
     private String modelo;
     private String caracteristica;
     private String serie;
-    private Cliente cliente;
+    public Cliente cliente;
     private int qtdOS=0;
     
     public Equip(Cliente cliente){

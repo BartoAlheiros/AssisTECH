@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class RepositorioOS {
+public class RepositorioOS implements IRepositorio {
     
     private OS[] ArrayOS;
     private int proxima;/*proxima conta de ArrayOS,
@@ -27,19 +27,20 @@ public class RepositorioOS {
         this.proxima = 0;
     }
     
-    public void cadastrar(OS c){           /*1 - atualiza a variavel proxima
+    @Override
+    public void cadastrar(Object c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma ArrayOS
                                                 */
-        this.ArrayOS[this.proxima] = c;
+        this.ArrayOS[this.proxima] = (OS) c;
        
                 this.ArrayOS[this.proxima].getEquipamento().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getQtdOS()) +1);
                 this.ArrayOS[this.proxima].getEquipamento().getCliente().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getCliente().getQtdOS()) +1);
          this.proxima = proxima + 1;
     }
     
-   private int procurarIndice(String no) {
+   public int procurarIndice(String no) {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
@@ -95,4 +96,5 @@ public class RepositorioOS {
         
         }
     }
+
 }
