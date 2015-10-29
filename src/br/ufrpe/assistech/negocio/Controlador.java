@@ -20,7 +20,7 @@ public class Controlador {
     private CadastroOS ordens;
     private static Controlador instance;
     
-    private Controlador () {
+    public Controlador () {
         //Contrutor privado para garantir que não haja instâncias fora da classe
         this.clientes = new CadastroCliente();
         this.equipamentos = new CadastroEquipamento();

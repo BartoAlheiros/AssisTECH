@@ -12,6 +12,7 @@ import br.ufrpe.assistech.entityBeans.OS;
 import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
 import br.ufrpe.assistech.negocio.CadastroOS;
+import br.ufrpe.assistech.negocio.Controlador;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,9 @@ public class GUI {
     CadastroOS co = new CadastroOS();
     Cliente c = new Cliente();
     Endereço e = new Endereço();
+    
+    Controlador u = new Controlador();
+    
     
     public void mostrarMenu(){
         System.out.println("Bem vindo ao menu de testes AssisTECH!");
