@@ -5,6 +5,7 @@
  */
 package br.ufrpe.assistech.dados;
 
+import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
 
 /**
@@ -33,6 +34,9 @@ public class RepositorioOS {
                                                 */
         this.ArrayOS[this.proxima] = c;
         this.proxima = proxima + 1;
+                Equip.cliente.setQtdOS((Equip.cliente.getQtdOS()) +1);
+                OS.equipamento.setQtdOS((OS.equipamento.getQtdOS()) +1);
+        
     }
     
    private int procurarIndice(String no) {
@@ -83,7 +87,8 @@ public class RepositorioOS {
         this.ArrayOS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
-        
+                Equip.cliente.setQtdOS((Equip.cliente.getQtdOS()) -1);
+                OS.equipamento.setQtdOS((OS.equipamento.getQtdOS()) -1);
         } else {
         
         

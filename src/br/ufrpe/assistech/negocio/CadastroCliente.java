@@ -40,13 +40,18 @@ public class CadastroCliente {
     
     public boolean descadastrar(String cpf){ 
         Cliente c = this.repositorio.procurar(cpf);
+        boolean aux = false;
         if(c != null){
+            if (c.getQtdOS() > 0) {
             this.repositorio.remover(cpf);
-            return true;
+            aux = true;
+            }else{
+                aux = false; //OS aberta em nome do cliente
+            }
         }else{
-           return false; //Conta inexistente ou conta ainda ativa.
+           aux = false; //Cliente inexistente
         }
-        
+        return aux;
     }
     
 }

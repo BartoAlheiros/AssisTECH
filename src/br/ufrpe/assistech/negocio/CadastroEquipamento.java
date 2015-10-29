@@ -42,14 +42,18 @@ public class CadastroEquipamento {
     
     public boolean descadastrar(String serie){ 
         Equip a = this.repositorio.procurar(serie);
+        boolean aux = false;
         if(a != null){
-            for(OS eqp : ArrayOS){
-            if()
+            if (a.getQtdOS() > 0) {
             this.repositorio.remover(serie);
-            return true;
+            aux = true;
+            }else{
+               aux = false;  //Equimento com OS aberta
+            }     
         }else{
-           return false; //Conta inexistente ou conta ainda ativa.
+           aux = false; //Equipamento inexistente
         }
+            return aux ;
         
     }
 }
