@@ -9,7 +9,7 @@ package br.ufrpe.assistech.entityBeans;
  *
  * @author Michel
  */
-public class Endereço {
+public class Endereco {
    /* 
     private String rua;
     private String numero;
@@ -18,10 +18,10 @@ public class Endereço {
     private String estado;
     
     
-    public Endereço () {
+    public Endereco () {
         
     }
-    public Endereço (String rua, String numero, String bairro, String cidade, String estado) {
+    public Endereco (String rua, String numero, String bairro, String cidade, String estado) {
         this.rua=rua;
         this.numero=numero;
         this.bairro=bairro;

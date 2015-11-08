@@ -13,23 +13,23 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class Controlador implements IControlador {
+public class Fachada implements IFachada {
     //Atributos como referência 
     private CadastroCliente clientes;
     private CadastroEquipamento equipamentos;
     private CadastroOS ordens;
-    private static Controlador instance;
+    private static Fachada instance;
     
-    private Controlador () {
+    private Fachada () {
         //Contrutor privado para garantir que não haja instâncias fora da classe
         this.clientes = new CadastroCliente();
         this.equipamentos = new CadastroEquipamento();
         this.ordens = new CadastroOS();
     }
     
-    public static Controlador getInstance(){ //Singleton
+    public static Fachada getInstance(){ //Singleton
         if (instance == null) {
-            instance = new Controlador();
+            instance = new Fachada();
         }
         return instance;          
     }

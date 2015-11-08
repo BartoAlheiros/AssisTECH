@@ -5,7 +5,7 @@
  */
 package br.ufrpe.assistech.dados;
 
-import br.ufrpe.assistech.entityBeans.Endereço;
+import br.ufrpe.assistech.entityBeans.Endereco;
 
 /**
  *
@@ -15,12 +15,12 @@ public class RepositorioEndereco {
     
     
     /*CLASSE EM CONSTRUÇÃO
-    private Endereço[] endereco;
+    private Endereco[] endereco;
    
     private int proxima;
     
     public RepositorioEndereco(int tamanho){
-         this.endereco = new Endereço[tamanho];
+         this.endereco = new Endereco[tamanho];
          this.proxima = 0;
     }
     
@@ -58,7 +58,7 @@ public class RepositorioEndereco {
 
     
     public void cadastrar(Object o) {
-        this.endereco[this.proxima] = (Endereço) o;
+        this.endereco[this.proxima] = (Endereco) o;
         this.proxima = proxima + 1;
     }*/
 }

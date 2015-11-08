@@ -8,7 +8,7 @@ public class Cliente {
     private String nome;
     private String telefoneFixo;
     private String celular;
-    //private Endereço endereco;
+    //private Endereco endereco;
     private String email;
     private int qtdOS=0;
      
@@ -94,7 +94,5 @@ public class Cliente {
         text += "Email :" + this.email + "";
         return text;
     }
-    public static void main(String[] args) {
-        
-    }
+   
 }

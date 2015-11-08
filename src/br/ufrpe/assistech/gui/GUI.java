@@ -6,14 +6,14 @@
 package br.ufrpe.assistech.gui;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
-import br.ufrpe.assistech.entityBeans.Endereço;
+import br.ufrpe.assistech.entityBeans.Endereco;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
 import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
 import br.ufrpe.assistech.negocio.CadastroOS;
-import br.ufrpe.assistech.negocio.Controlador;
-import br.ufrpe.assistech.negocio.IControlador;
+import br.ufrpe.assistech.negocio.Fachada;
+import br.ufrpe.assistech.negocio.IFachada;
 import java.util.Scanner;
 //import br.ufrpe.assistech.negocio;
 
@@ -26,9 +26,9 @@ public class GUI{
     CadastroEquipamento ce = new CadastroEquipamento();
     CadastroOS co = new CadastroOS();
     Cliente c = new Cliente();
-    Endereço e = new Endereço();
+    Endereco e = new Endereco();
     
-    Controlador u = Controlador.getInstance();//utilizando a fachada.
+    Fachada u = Fachada.getInstance();//utilizando a fachada.
     
     
     
@@ -89,7 +89,7 @@ public class GUI{
                 c.setCelular(input.next());
                 System.out.println("Email :"); 
                 c.setEmail(input.next());
-                u.cadastrarCliente(c);//cadastrou cliente no cadastrarCliente da fachada.(Cotnrolador).
+                u.cadastrarCliente(c);//cadastrou cliente no cadastrarCliente da Fachada.
                 
                 
                 if(c != null){

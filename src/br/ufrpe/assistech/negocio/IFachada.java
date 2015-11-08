@@ -13,7 +13,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author alheirosb
  */
-public interface IControlador {
+public interface IFachada {
     
     void cadastrarCliente (Cliente c);
     
