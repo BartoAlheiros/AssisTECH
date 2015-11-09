@@ -8,7 +8,7 @@ package br.ufrpe.assistech.dados;
 /**
  *
  * @author alheirosb
- */
+ *///teste
 public interface IRepositorio {
     void cadastrar(Object o);   /*para indicar a proxima            
                                                 /*posição vazia do Array.    
