@@ -1,22 +1,25 @@
+package pacotePrincipalGUI;
+
+
+import MyFrames.Frame1;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufrpe.assistech.gui;
-
-import br.ufrpe.assistech.gui.MyFrames.Frame1;
 
 /**
  *
  * @author alheirosb
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class AssisTECH extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaPrincipal
+     * Creates new form MainFrame
      */
-    public TelaPrincipal() {
+    public AssisTECH() {
+        super("AssisTECH");
         initComponents();
     }
 
@@ -31,37 +34,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnuMenu = new javax.swing.JMenu();
-        mnuSair = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuFile = new javax.swing.JMenu();
+        mnuExit = new javax.swing.JMenuItem();
+        mnuFrame = new javax.swing.JMenu();
+        mnuFrame1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("AssisTECH");
 
-        mnuMenu.setText("Menu");
+        mnuFile.setText("File");
 
-        mnuSair.setText("Sair");
-        mnuSair.addActionListener(new java.awt.event.ActionListener() {
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuSairActionPerformed(evt);
+                mnuExitActionPerformed(evt);
             }
         });
-        mnuMenu.add(mnuSair);
+        mnuFile.add(mnuExit);
 
-        jMenuBar1.add(mnuMenu);
+        jMenuBar1.add(mnuFile);
 
-        jMenu1.setText("Novo");
+        mnuFrame.setText("Novo");
 
-        jMenuItem1.setText("Ordem de Serviço");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnuFrame1.setText("Ordem de Serviço");
+        mnuFrame1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnuFrame1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        mnuFrame.add(mnuFrame1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mnuFrame);
 
         setJMenuBar(jMenuBar1);
 
@@ -69,26 +71,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE)
+            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_mnuExitActionPerformed
+
+    private void mnuFrame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame1ActionPerformed
+        // TODO add your handling code here:
         Frame1 f = new Frame1();
         desktop.add(f);
         f.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void mnuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSairActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_mnuSairActionPerformed
+    }//GEN-LAST:event_mnuFrame1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,30 +110,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AssisTECH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AssisTECH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AssisTECH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AssisTECH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new AssisTECH().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenu mnuMenu;
-    private javax.swing.JMenuItem mnuSair;
+    private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenu mnuFile;
+    private javax.swing.JMenu mnuFrame;
+    private javax.swing.JMenuItem mnuFrame1;
     // End of variables declaration//GEN-END:variables
 }
