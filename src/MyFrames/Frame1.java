@@ -7,6 +7,7 @@ package MyFrames;
 
 import MyFrames.MyPanels.Panel1;
 import MyFrames.MyPanels.Panel2;
+import MyFrames.MyPanels.Panel3;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -19,6 +20,7 @@ public class Frame1 extends javax.swing.JInternalFrame {
     GridBagLayout layout = new GridBagLayout();
     Panel1 p1;
     Panel2 p2;
+    Panel3 p3;
 
     /**
      * Creates new form Frame1
@@ -27,6 +29,7 @@ public class Frame1 extends javax.swing.JInternalFrame {
         initComponents();
         p1 = new Panel1();
         p2 = new Panel2();
+        p3 = new Panel3();
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -35,8 +38,12 @@ public class Frame1 extends javax.swing.JInternalFrame {
         c.gridx = 0;
         c.gridy = 0;
         DynamicPanel.add(p2, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        DynamicPanel.add(p3, c);
         p1.setVisible(true);
         p2.setVisible(false);
+        p3.setVisible(false);
         
     }
 
@@ -78,6 +85,11 @@ public class Frame1 extends javax.swing.JInternalFrame {
         });
 
         btnPanel3.setText("Panel 3");
+        btnPanel3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPanel3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelButtonLayout = new javax.swing.GroupLayout(PanelButton);
         PanelButton.setLayout(PanelButtonLayout);
@@ -127,13 +139,22 @@ public class Frame1 extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         p1.setVisible(true);
         p2.setVisible(false);
+        p3.setVisible(false);
     }//GEN-LAST:event_btnPanel1ActionPerformed
 
     private void btnPanel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel2ActionPerformed
         // TODO add your handling code here:
         p1.setVisible(false);
         p2.setVisible(true);
+        p3.setVisible(false);
     }//GEN-LAST:event_btnPanel2ActionPerformed
+
+    private void btnPanel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel3ActionPerformed
+        // TODO add your handling code here:
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(true);
+    }//GEN-LAST:event_btnPanel3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
