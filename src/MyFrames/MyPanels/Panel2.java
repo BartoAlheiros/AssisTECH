@@ -5,8 +5,6 @@
  */
 package MyFrames.MyPanels;
 
-import br.ufrpe.assistech.gui.MyFrames.*;
-
 /**
  *
  * @author alheirosb
