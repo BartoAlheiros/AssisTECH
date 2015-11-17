@@ -4,7 +4,7 @@ package br.ufrpe.assistech.dados;
 import br.ufrpe.assistech.entityBeans.Cliente;
 
 
-public class RepositorioCliente implements IRepositorio{
+public class RepositorioCliente implements IRepositorioCliente{
     private Cliente[] cliente;
     private int proxima;/*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
@@ -87,8 +87,8 @@ public class RepositorioCliente implements IRepositorio{
     }    
 
   
-    public void cadastrar(Object o) {
-        this.cliente[this.proxima] = (Cliente) o;
+    public void cadastrar(Cliente c) {
+        this.cliente[this.proxima] = (Cliente) c;
         this.proxima = proxima + 1;
     }
 

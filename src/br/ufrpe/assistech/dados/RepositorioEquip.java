@@ -11,7 +11,7 @@ import br.ufrpe.assistech.entityBeans.Equip;
  *
  * @author Michel
  */
-public class RepositorioEquip implements IRepositorio {
+public class RepositorioEquip implements IRepositorioEquip {
     
     private Equip[] Equip; 
     private int proxima;/*proximo Equipamento,
@@ -26,8 +26,8 @@ public class RepositorioEquip implements IRepositorio {
         this.proxima = 0;
     }
     
-    @Override
-    public void cadastrar(Object c){           /*1 - atualiza a variavel proxima
+ 
+    public void cadastrar(Equip c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma conta
@@ -36,7 +36,7 @@ public class RepositorioEquip implements IRepositorio {
         this.proxima = proxima + 1;
     }
         
-    @Override
+
    public int procurarIndice(String serie) {
        int i = 0;
        boolean achou = false;
@@ -53,7 +53,7 @@ public class RepositorioEquip implements IRepositorio {
       return i;
     }
    
-    @Override
+
     public boolean existe(String serie){
        boolean existe = false;
        int indice = this.procurarIndice(serie);
@@ -63,7 +63,7 @@ public class RepositorioEquip implements IRepositorio {
        return existe;
     }
    
-    @Override
+
     public Equip procurar(String serie){        /*procura um Equipamento, recebendo
                                                 *como parâmetro o número de serie desse
                                                 *equipamento.
@@ -80,7 +80,7 @@ public class RepositorioEquip implements IRepositorio {
           
     }
    
-    @Override
+
     public void remover(String serie) {
         int i = this.procurarIndice(serie);
     

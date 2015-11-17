@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  *
  * @author Michel
  */
-public class RepositorioOS implements IRepositorio {
+public class RepositorioOS implements IRepositorioOS {
     
     private OS[] ArrayOS;
     private int proxima;/*proxima conta de ArrayOS,
@@ -28,7 +28,7 @@ public class RepositorioOS implements IRepositorio {
     }
     
    
-    public void cadastrar(Object c){           /*1 - atualiza a variavel proxima
+    public void cadastrar(OS c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma ArrayOS
