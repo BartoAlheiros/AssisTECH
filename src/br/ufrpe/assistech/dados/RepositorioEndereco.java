@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.Endereco;
  *
  * @author alheirosb
  */
-public class RepositorioEndereco {
+public class RepositorioEndereco implements IRepositorioEndereco {
     
     
     private Endereco[] endereco;
@@ -56,7 +56,7 @@ public class RepositorioEndereco {
     }    
 
     
-    public void cadastrar(Object o) {
+    public void cadastrar(Endereco o) {
         this.endereco[this.proxima] = (Endereco) o;
         this.proxima = proxima + 1;
     }
