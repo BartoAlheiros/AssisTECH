@@ -27,7 +27,7 @@ public class RepositorioOS implements IRepositorio {
         this.proxima = 0;
     }
     
-    @Override
+   
     public void cadastrar(Object c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
@@ -36,7 +36,7 @@ public class RepositorioOS implements IRepositorio {
         this.ArrayOS[this.proxima] = (OS) c;
        
                 this.ArrayOS[this.proxima].getEquipamento().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getQtdOS()) +1);
-                this.ArrayOS[this.proxima].getEquipamento().getCliente().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getCliente().getQtdOS()) +1);
+                this.ArrayOS[this.proxima].getCliente().setQtdOS(( this.ArrayOS[this.proxima].getCliente().getQtdOS()) +1);
          this.proxima = proxima + 1;
     }
     
@@ -84,7 +84,7 @@ public class RepositorioOS implements IRepositorio {
     
         if (i != this.proxima) {
         this.ArrayOS[this.proxima].getEquipamento().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getQtdOS()) -1);
-        this.ArrayOS[this.proxima].getEquipamento().getCliente().setQtdOS(( this.ArrayOS[this.proxima].getEquipamento().getCliente().getQtdOS()) -1);
+        this.ArrayOS[this.proxima].getCliente().setQtdOS(( this.ArrayOS[this.proxima].getCliente().getQtdOS()) -1);
         this.ArrayOS[i] = this.ArrayOS[this.proxima - 1];
         this.ArrayOS[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;

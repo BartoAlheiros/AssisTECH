@@ -13,19 +13,14 @@ public class Equip {
     private String modelo;
     private String caracteristica;
     private String serie;
-    public Cliente cliente;
     private int qtdOS=0;
     
-    public Equip(Cliente cliente){
-        this.cliente = cliente;
-    }
-    
-    public Equip (String marca, String modelo, String caracteristica, String serie, Cliente cliente) {
+  
+    public Equip (String marca, String modelo, String caracteristica, String serie) {
         this.marca = marca;
         this.modelo = modelo;
         this.caracteristica = caracteristica;
         this.serie = serie;
-        this.cliente = cliente;
     }
     
      public int getQtdOS(){
@@ -68,10 +63,6 @@ public class Equip {
         this.serie=serie;
     }
     
-    public Cliente getCliente() {
-        return cliente;
-    }
-    
     
     public String toString(){
         String text = "";
@@ -79,11 +70,9 @@ public class Equip {
         text += "Modelo :" +this.modelo + "\n";
         text += "Caracteristica do Equipamento: " + this.caracteristica + "\n";
         text += "Número de série :" + this.serie + "\n";
-        text += "Dados do proprietario :\n" + this.cliente.toString() + "";
         return text; 
     }
     
-    public void cadastrarEquip(){
         
-    }
+    
 }

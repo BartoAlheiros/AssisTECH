@@ -27,7 +27,7 @@ public class RepositorioCliente implements IRepositorio{
         this.proxima = proxima + 1;
     }*/
     
-    @Override
+   
    public int procurarIndice(String cpf) {
        int i = 0;
        boolean achou = false;
@@ -42,7 +42,7 @@ public class RepositorioCliente implements IRepositorio{
       return i;
     }
    
-    @Override
+
     public boolean existe(String cpf){
        boolean existe = false;
        int indice = this.procurarIndice(cpf);
@@ -52,7 +52,7 @@ public class RepositorioCliente implements IRepositorio{
        return existe;
     }
     
-    @Override
+
     public Cliente procurar(String cpf){        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
@@ -69,7 +69,7 @@ public class RepositorioCliente implements IRepositorio{
           
     }
    
-    @Override
+
     public void remover(String cpf) {
         int i = this.procurarIndice(cpf);
      
@@ -86,7 +86,7 @@ public class RepositorioCliente implements IRepositorio{
         }
     }    
 
-    @Override
+  
     public void cadastrar(Object o) {
         this.cliente[this.proxima] = (Cliente) o;
         this.proxima = proxima + 1;

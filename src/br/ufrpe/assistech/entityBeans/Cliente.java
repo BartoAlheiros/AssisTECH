@@ -3,35 +3,36 @@ package br.ufrpe.assistech.entityBeans;
 
 
 public class Cliente {
-    //private int numero;
     private String cpf;
     private String nome;
     private String telefoneFixo;
     private String celular;
-    //private Endereco endereco;
+    private Endereco endereco;
     private String email;
+    private Equip equipamento;
     private int qtdOS=0;
      
     public Cliente(){//Construtor padrão.
         
     }    
     
-    public Cliente(String nome, String cpf, /*Endereço endereco,*/ String telefoneFixo, String celular, String email) {
+    public Cliente(String nome, String cpf, Endereco endereco, String telefoneFixo, String celular, String email, Equip equipamento) {
         this.cpf = cpf;
         this.nome = nome; 
-        //this.endereco = endereco;
+        this.endereco = endereco;
         this.telefoneFixo = telefoneFixo;
         this.celular = celular;
         this.email = email;
+        this.equipamento=equipamento;
     }
     
-    //public Endereço getEndereco(){
-    //    return endereco;
-    //}
+    public Endereco getEndereco(){
+        return endereco;
+    }
     
-    //public void setEndereco(Endereço end){
-    //    this.endereco=end;
-    //}
+    public void setEndereco(Endereco end){
+        this.endereco=end;
+    }
     
     public int getQtdOS(){
         return qtdOS;
@@ -88,7 +89,7 @@ public class Cliente {
         String text = "";
         text += "Nome :" + this.nome + "\n";
         text += "CPF :" + this.cpf + "\n";
-        //text += "Endereço :" + endereco.toString();
+        text += "Endereço :" + this.endereco.toString() + "\n";
         text += "Telefone celular :" + this.telefoneFixo + "\n";
         text += "Telefone fixo :" + this.celular + "\n";
         text += "Email :" + this.email + "";
