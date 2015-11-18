@@ -5,6 +5,11 @@
  */
 package MyFrames.MyPanels;
 
+import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.negocio.CadastroCliente;
+import br.ufrpe.assistech.negocio.Fachada;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alheirosb
@@ -12,6 +17,7 @@ package MyFrames.MyPanels;
 public class Panel1 extends javax.swing.JPanel {
     private Object p1;
     private Object p2;
+    Fachada u = Fachada.getInstance();
 
     /**
      * Creates new form OrdemServ1
@@ -30,7 +36,7 @@ public class Panel1 extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtFieldNomeCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -40,7 +46,19 @@ public class Panel1 extends javax.swing.JPanel {
 
         jLabel1.setText("Cliente");
 
+        txtFieldNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldNomeClienteActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Material");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Urgência");
 
@@ -72,17 +90,17 @@ public class Panel1 extends javax.swing.JPanel {
                             .addComponent(jLabel2))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                            .addComponent(txtFieldNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                             .addComponent(jTextField2))))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -94,9 +112,24 @@ public class Panel1 extends javax.swing.JPanel {
                     .addComponent(jRadioButton2))
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton3)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtFieldNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNomeClienteActionPerformed
+        // TODO add your handling code here:
+        CadastroCliente c1 = new CadastroCliente();
+        Cliente c = new Cliente();
+
+        c.setNome(txtFieldNomeCliente.getText());
+        
+        //System.out.println(c.getNome());
+    }//GEN-LAST:event_txtFieldNomeClienteActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -106,7 +139,7 @@ public class Panel1 extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtFieldNomeCliente;
     // End of variables declaration//GEN-END:variables
 }

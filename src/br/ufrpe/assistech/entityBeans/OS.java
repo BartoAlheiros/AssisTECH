@@ -29,6 +29,10 @@ public class OS {
         this.entrega = "19/10/2015";
         this.naoAtiva =  false; 
     }
+
+    public OS() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   
    public String getNo (){
        return no;

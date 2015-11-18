@@ -22,6 +22,10 @@ public class Equip {
         this.caracteristica = caracteristica;
         this.serie = serie;
     }
+
+    public Equip() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
      public int getQtdOS(){
         return qtdOS;

@@ -18,6 +18,8 @@ public class AssisTECH extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    
+    
     public AssisTECH() {
         super("AssisTECH");
         initComponents();
@@ -125,6 +127,7 @@ public class AssisTECH extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AssisTECH().setVisible(true);
+                //System.out.println();
             }
         });
     }

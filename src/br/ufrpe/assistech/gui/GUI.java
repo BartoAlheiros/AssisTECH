@@ -97,7 +97,7 @@ public class GUI{
                     System.out.println("");
                 }
                 
-                Equip e = new Equip (c);//Criando um equipamento e preenchendo-o.
+                Equip e = new Equip ();//Criando um equipamento e preenchendo-o.
                 //boolean opcao = false;
                 String opcao2;
                 
@@ -136,7 +136,7 @@ public class GUI{
                         
                 }while(comandoInvalido = true);//CadastroEquip
                 
-                OS o = new OS(e);
+                OS o = new OS();
                 System.out.println("Numéro de Ordem:" + o.getNo());
                 System.out.println("Serviço :");
                 o.setServico(input.next());
