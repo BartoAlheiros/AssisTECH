@@ -15,12 +15,12 @@ public interface IRepositorioOS {
       void cadastrar(OS o);   
         
     
-    int procurarIndice(String str);
+    int procurarIndice(Double d);
        
    
-    OS procurar(String str);
+    OS procurar(Double d);
     
-    boolean existe(String str);
+    boolean existe(Double d);
    
-     void remover(String str);  
+     void remover(Double d);  
 }

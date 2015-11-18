@@ -25,11 +25,11 @@ public interface IFachada {
     
     Equip procurarEquipamento(String serie);
     
-    OS procurarOrdem (String no);
+    OS procurarOrdem (Double no);
     
     void descadastrarCliente (String cpf);
     
     void descadastraEquipamento (String serie);
     
-    void encerrarOS (String no);
+    void encerrarOS (Double no);
 }

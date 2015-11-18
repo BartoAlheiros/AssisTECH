@@ -33,20 +33,20 @@ public class CadastroOS  {
         
     }
     
-    public OS procurar(String no){
+    public OS procurar(Double no){
         return this.repositorio.procurar(no);//Método que delega a responsabilidade
                                                // de procurar a conta para o repositório.
     }
     
-     public boolean existe(String no){
+     public boolean existe(Double no){
         return this.repositorio.existe(no);
     }
     
-    public boolean finalizarServico(String osNumber){ //método para descadastrar
+    public boolean finalizarServico(Double no){ //método para descadastrar
                                                    //uma OS.
-        OS d = this.repositorio.procurar(osNumber);
+        OS d = this.repositorio.procurar(no);
         if(d != null && d.getNaoAtiva() == true){
-            this.repositorio.remover(osNumber);
+            this.repositorio.remover(no);
             return true;
         }else{
             return false;//a a OS ainda está ativa e não pode ser removida.

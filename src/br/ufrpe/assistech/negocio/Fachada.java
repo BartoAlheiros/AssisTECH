@@ -60,7 +60,7 @@ public class Fachada implements IFachada {
     }
     
     @Override
-    public OS procurarOrdem (String no) {
+    public OS procurarOrdem (Double no) {
         return this.ordens.procurar(no);
     }
     
@@ -75,7 +75,7 @@ public class Fachada implements IFachada {
     }
     
     @Override
-    public void encerrarOS (String no) {
+    public void encerrarOS (Double no) {
         this.ordens.finalizarServico(no);
     }
 }
