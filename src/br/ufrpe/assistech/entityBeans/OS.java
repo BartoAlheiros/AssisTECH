@@ -67,7 +67,7 @@ public class OS {
    public Cliente getCliente(){
        return cliente;
    }
-   
+  
    
     public String toString(){
          String text = "";
@@ -77,6 +77,6 @@ public class OS {
          text += "Previsão de Entrega" + this.entrega + "\n";
          return text;
     }
-    
+
 }
 

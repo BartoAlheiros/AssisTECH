@@ -1,22 +1,21 @@
 
 package br.ufrpe.assistech.negocio;
 
-import br.ufrpe.assistech.dados.RepositorioCliente;
-import br.ufrpe.assistech.dados.RepositorioEndereco;
-//import br.ufrpe.assistech.dados.RepositorioEndereco;
+import br.ufrpe.assistech.dados.IRepositorioCliente;
 import br.ufrpe.assistech.entityBeans.Cliente;
 
 /**
  *
  * @author alheirosb: CadastroCliente é uma Classe Controlador.
  */
-public class CadastroCliente {
-    private RepositorioCliente repositorio;
-    private RepositorioEndereco repositorio2;
+public class CadastroCliente implements IRepositorioCliente{
+
+   private IRepositorioCliente repositorio;
     
-    public CadastroCliente(){
-        this.repositorio = new RepositorioCliente(100);
-        this.repositorio2 = new RepositorioEndereco(100);
+    public CadastroCliente(IRepositorioCliente repo){
+        this.repositorio = repo;
+       
+        
                                                             /*Cria, incialmente,
                                                              um Repositorio de Clientes
                                                              com 100 contas de cliente.
@@ -27,8 +26,9 @@ public class CadastroCliente {
     
     public void cadastrar(Cliente c){
         if(c != null && !this.existe(c.getCpf())){
-            this.repositorio.cadastrar(c);
-            this.repositorio2.cadastrar(c.getEndereco());
+            this.cadastrar(c);
+            this.repositorio.cad
+            this.cadastrar(c.getEndereco());
         }else{
             
         }

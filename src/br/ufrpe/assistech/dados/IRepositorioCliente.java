@@ -12,12 +12,14 @@ import br.ufrpe.assistech.entityBeans.Cliente;
  * @author alheirosb
  *///teste
 public interface IRepositorioCliente {
+    public RepositorioCliente repositorio = new RepositorioCliente(100);
+    
+
     void cadastrar(Cliente c);   
         
     
     int procurarIndice(String str);
-       
-   
+
     Cliente procurar(String str);
     
     boolean existe(String str);

@@ -26,6 +26,10 @@ public class RepositorioCliente implements IRepositorioCliente{
         this.cliente[this.proxima] = c;
         this.proxima = proxima + 1;
     }*/
+
+    RepositorioCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    
    public int procurarIndice(String cpf) {
