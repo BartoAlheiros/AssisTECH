@@ -123,6 +123,8 @@ public class Panel1 extends javax.swing.JPanel {
 
         c.setNome(txtFieldNomeCliente.getText());
         
+        //JOptionPane.showMessageDialog(null, "Pelo menos sabe programar em Java!\n");
+        
         //System.out.println(c.getNome());
     }//GEN-LAST:event_txtFieldNomeClienteActionPerformed
 

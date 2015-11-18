@@ -22,7 +22,7 @@ public class AssistechMain {
 
         gui.mostrarMenu();
         
-         JOptionPane.showMessageDialog(null, "Pelo menos sabe programar em Java!\n");
+        JOptionPane.showMessageDialog(null, "Pelo menos sabe programar em Java!\n");
     }
         
 
