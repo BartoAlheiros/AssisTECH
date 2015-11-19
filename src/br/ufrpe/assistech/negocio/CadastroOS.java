@@ -5,7 +5,7 @@
  */
 package br.ufrpe.assistech.negocio;
 
-import br.ufrpe.assistech.dados.RepositorioOS;
+import br.ufrpe.assistech.dados.IRepositorioOS;
 import br.ufrpe.assistech.entityBeans.OS;
 
 /**
@@ -13,10 +13,14 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public class CadastroOS  {
-    private RepositorioOS repositorio;
+    private IRepositorioOS repositorio;
     
     public CadastroOS(){
-        this.repositorio = new RepositorioOS(100);/*Cria, incialmente,
+        
+    }
+    
+    public CadastroOS(IRepositorioOS repositorio){
+        this.repositorio = repositorio;/*Cria, incialmente,
                                                              um Repositorio de OS
                                                              com 100 Ordens.
                                                              **Ver construtor da Classe

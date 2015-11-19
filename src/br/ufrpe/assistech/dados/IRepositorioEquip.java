@@ -12,7 +12,9 @@ import br.ufrpe.assistech.entityBeans.Equip;
  * @author Michel
  */
 public interface IRepositorioEquip {
-     void cadastrar(Equip e);   
+     RepositorioEquip repositorio = new RepositorioEquip(100);
+    
+    void cadastrar(Equip e);    
         
     
     int procurarIndice(String str);

@@ -12,7 +12,9 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public interface IRepositorioOS {
-      void cadastrar(OS o);   
+RepositorioOS repositorio = new RepositorioOS(100);
+    
+    void cadastrar(OS o);   
         
     
     int procurarIndice(String str);

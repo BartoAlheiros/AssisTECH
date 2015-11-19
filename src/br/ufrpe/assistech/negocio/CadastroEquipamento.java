@@ -1,10 +1,8 @@
 
 package br.ufrpe.assistech.negocio;
 
+import br.ufrpe.assistech.dados.IRepositorioEquip;
 import br.ufrpe.assistech.entityBeans.Equip;
-import br.ufrpe.assistech.dados.RepositorioEquip;
-import br.ufrpe.assistech.dados.RepositorioOS;
-import br.ufrpe.assistech.entityBeans.OS;
 
 /**
  *
@@ -12,10 +10,14 @@ import br.ufrpe.assistech.entityBeans.OS;
  */
 public class CadastroEquipamento {
     
-    private RepositorioEquip repositorio;
+    private IRepositorioEquip repositorio;
     
     public CadastroEquipamento(){
-        this.repositorio = new RepositorioEquip(100);/*Cria, incialmente,
+        
+    }
+    
+    public CadastroEquipamento(IRepositorioEquip repositorio){
+        this.repositorio = repositorio;/*Cria, incialmente,
                                                              um Repositorio de Clientes
                                                              com 100 contas de cliente.
                                                              **Ver construtor da Classe
