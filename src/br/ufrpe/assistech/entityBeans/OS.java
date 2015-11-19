@@ -1,13 +1,11 @@
 
 package br.ufrpe.assistech.entityBeans;
-
-import br.ufrpe.assistech.entityBeans.Equip;
 import java.time.LocalDate;
 
 
 public class OS {
-    private String no;//número da OS
-    private String data; //Paara datas será usada a  API Java.Time, que usa tipo Double, tipo String usado temporariamente para testes
+    private double no;//número da OS
+    private LocalDate data;
     private String entrega;
     public Equip equipamento;
     public Cliente cliente;
@@ -22,21 +20,25 @@ public class OS {
         
     }
     
-    public OS(String servico) { //construtor, aplicar Java.Time nas datas e gerador de número no NO
-        this.no = "0001";
+    public OS(String servico) { 
+        this.no = 1;
         this.servico = servico;
-        this.data = "03/10/2015";
+        this.data = hoje;
         this.entrega = "19/10/2015";
         this.naoAtiva =  false; 
     }
+
+    public OS() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   
-   public String getNo (){
+   public Double getNo (){
        return no;
    }
    
-   public String getData() {
+   /*public LocalDate getData() {
        return data;
-   }
+   }*/
    
    public String getEntrega(){
        return entrega;
@@ -65,7 +67,7 @@ public class OS {
    public Cliente getCliente(){
        return cliente;
    }
-   
+  
    
     public String toString(){
          String text = "";
@@ -75,6 +77,6 @@ public class OS {
          text += "Previsão de Entrega" + this.entrega + "\n";
          return text;
     }
-    
+
 }
 

@@ -9,15 +9,16 @@ import br.ufrpe.assistech.entityBeans.Cliente;
  *
  * @author alheirosb: CadastroCliente é uma Classe Controlador.
  */
+
 public class CadastroCliente {
     private IRepositorioCliente repositorio;
     private IRepositorioEndereco repositorio2;
-    
+
     public CadastroCliente(){
         
     }
     
-    public CadastroCliente(IRepositorioCliente repositorio, IRepositorioEndereco repositorio2){
+     public CadastroCliente(IRepositorioCliente repositorio, IRepositorioEndereco repositorio2){
         this.repositorio = repositorio;
         this.repositorio2 = repositorio2;
         
@@ -31,9 +32,8 @@ public class CadastroCliente {
     
     public void cadastrar(Cliente c){
         if(c != null && !this.existe(c.getCpf())){
-            this.repositorio.cadastrar(c);
-            this.repositorio2.cadastrar(c.getEndereco());
-            
+        repositorio.cadastrar(c);
+        repositorio2.cadastrar(c.getEndereco());
         }else{
             
         }
@@ -67,3 +67,4 @@ public class CadastroCliente {
     }
     
 }
+

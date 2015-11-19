@@ -11,6 +11,7 @@ import br.ufrpe.assistech.negocio.CadastroCliente;
 import br.ufrpe.assistech.negocio.CadastroEquipamento;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class AssistechMain {
@@ -21,6 +22,10 @@ public class AssistechMain {
 
         gui.mostrarMenu();
         
+        JOptionPane.showMessageDialog(null, "Pelo menos sabe programar em Java!\n");
     }
-    
+        
+
 }
+    
+

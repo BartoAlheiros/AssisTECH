@@ -18,8 +18,7 @@ public interface IRepositorioCliente {
         
     
     int procurarIndice(String str);
-       
-   
+
     Cliente procurar(String str);
     
     boolean existe(String str);

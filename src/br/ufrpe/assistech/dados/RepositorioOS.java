@@ -40,7 +40,7 @@ public class RepositorioOS implements IRepositorioOS {
          this.proxima = proxima + 1;
     }
     
-   public int procurarIndice(String no) {
+   public int procurarIndice(Double no) {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
@@ -54,7 +54,7 @@ public class RepositorioOS implements IRepositorioOS {
       return i;
     }
    
-    public boolean existe(String numero){
+    public boolean existe(Double numero){
        boolean existe = false;
        int indice = this.procurarIndice(numero);
        if (indice != proxima){
@@ -63,7 +63,7 @@ public class RepositorioOS implements IRepositorioOS {
        return existe;
     }
    
-    public OS procurar(String no){        /*procura uma ArrayOS, recebendo
+    public OS procurar(Double no){        /*procura uma ArrayOS, recebendo
                                                 *como parâmetro o número dessa
                                                 *ArrayOS.
                                                 */
@@ -79,7 +79,7 @@ public class RepositorioOS implements IRepositorioOS {
           
     }
    
-    public void remover(String no) {
+    public void remover(Double no) {
         int i = this.procurarIndice(no);
     
         if (i != this.proxima) {
