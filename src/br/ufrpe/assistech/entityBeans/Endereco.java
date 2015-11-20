@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,18 +16,18 @@ public class Endereco {
     private String numero;
     private String bairro;
     private String cidade;
-    private String estado;
+ 
     
     
     public Endereco () {
         
     }
-    public Endereco (String rua, String numero, String bairro, String cidade, String estado) {
+    public Endereco (String rua, String numero, String bairro, String cidade) {
         this.rua=rua;
         this.numero=numero;
         this.bairro=bairro;
         this.cidade=cidade;
-        this.estado=estado;
+       
      
     }
     
@@ -46,10 +47,7 @@ public class Endereco {
         return cidade;
     }
     
-    public String getEstado (){
-        return estado;
-    }
-    
+   
     
     
     public void setRua (String rua) {
@@ -68,16 +66,14 @@ public class Endereco {
         this.cidade=cidade;
     }
     
-    public void setEstado (String estado) {
-        this.estado=estado;
-    }
+ 
     
    
     
     public String toString() {
         String text = "";
         text += "Rua:" + "" + getRua() + "," + getNumero() + "-" + getBairro() + "\n";
-        text += getCidade() + "-" + getEstado() + "\n";
+        text += getCidade() + "\n";
  
         return text;
     }
