@@ -19,7 +19,7 @@ public class AssisTECH extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    
+    Frame2 f = new Frame2();
     
     public AssisTECH() {
         super("AssisTECH");
@@ -91,7 +91,6 @@ public class AssisTECH extends javax.swing.JFrame {
 
     private void mnuFrame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame1ActionPerformed
         // TODO add your handling code here:
-        Frame2 f = new Frame2();
         desktop.add(f);
         f.setVisible(true);
     }//GEN-LAST:event_mnuFrame1ActionPerformed
