@@ -2,7 +2,6 @@ package NovoFrame2;
 
 
 import pacotePrincipalGUI.*;
-import MyFrames.Frame1;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -34,6 +33,7 @@ public class AssisTECH extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -43,6 +43,10 @@ public class AssisTECH extends javax.swing.JFrame {
         mnuFrame1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, desktop, org.jdesktop.beansbinding.ELProperty.create("${background}"), desktop, org.jdesktop.beansbinding.BeanProperty.create("background"));
+        bindingGroup.addBinding(binding);
 
         mnuFile.setText("File");
 
@@ -81,9 +85,12 @@ public class AssisTECH extends javax.swing.JFrame {
             .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -141,5 +148,6 @@ public class AssisTECH extends javax.swing.JFrame {
     private javax.swing.JMenu mnuFile;
     private javax.swing.JMenu mnuFrame;
     private javax.swing.JMenuItem mnuFrame1;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
