@@ -6,6 +6,10 @@
 package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Equip;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -14,19 +18,27 @@ import br.ufrpe.assistech.entityBeans.Equip;
 public class RepositorioEquip implements IRepositorioEquip {
     
     private Equip[] Equip; 
-    private int proxima;/*proximo Equipamento,
+    private int proxima;
+    private static RepositorioEquip instance;/*proximo Equipamento,
                         *dentro do array de Equip, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
                         *RepositorioEquip abaixo.
                         */
-    
+    public RepositorioEquip(){
+        
+    }
     public RepositorioEquip(int tamanho){
         this.Equip = new Equip[tamanho];
         this.proxima = 0;
     }
     
- 
+ public static RepositorioEquip getInstance(){ //Singleton
+        if (instance == null) {
+            instance = new RepositorioEquip();
+        }
+        return instance;          
+    }
     public void cadastrar(Equip c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
@@ -97,6 +109,14 @@ public class RepositorioEquip implements IRepositorioEquip {
         
         }
     }
-
+public void salvador(){
+        try{
+            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
+            objectOut.writeObject(this);  
+            objectOut.close();  
+        }catch (IOException e){
+            
+        }
+    }
   
 }

@@ -2,12 +2,13 @@
 package br.ufrpe.assistech.entityBeans;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
+import java.io.Serializable;
 
 /**
  *
  * @author Michel
  */
-public class Equip {
+public class Equip implements Serializable{
     
     private String marca;
     private String modelo;

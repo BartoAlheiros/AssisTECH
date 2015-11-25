@@ -12,8 +12,7 @@ import br.ufrpe.assistech.entityBeans.Cliente;
  * @author alheirosb
  *///teste
 public interface IRepositorioCliente {
-  RepositorioCliente repositorio = new RepositorioCliente(100);
-    
+   
     void cadastrar(Cliente c);   
         
     
@@ -23,6 +22,8 @@ public interface IRepositorioCliente {
     
     boolean existe(String str);
    
-     void remover(String str);    
+     void remover(String str); 
+     
+       void salvador();
 }
 
