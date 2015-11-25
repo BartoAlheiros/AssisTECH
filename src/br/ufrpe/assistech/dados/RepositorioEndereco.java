@@ -7,6 +7,10 @@ package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Endereco;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -18,13 +22,20 @@ public class RepositorioEndereco implements IRepositorioEndereco {
     private Endereco[] endereco;
    
     private int proxima;
-    
+        private static RepositorioEndereco instance;
     public RepositorioEndereco(int tamanho){
          this.endereco = new Endereco[tamanho];
          this.proxima = 0;
     }
-    
- 
+    public RepositorioEndereco(){
+        
+    }
+  public static RepositorioEndereco getInstance(){ //Singleton
+        if (instance == null) {
+            instance = new RepositorioEndereco();
+        }
+        return instance;          
+    }
    public int procurarIndice(Cliente c) {
        int i = 0;
        boolean achou = false;
@@ -59,5 +70,14 @@ public class RepositorioEndereco implements IRepositorioEndereco {
     public void cadastrar(Endereco o) {
         this.endereco[this.proxima] = (Endereco) o;
         this.proxima = proxima + 1;
+    }
+    public void salvador(){
+        try{
+            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEND.dat")));              
+            objectOut.writeObject(this);  
+            objectOut.close();  
+        }catch (IOException e){
+            
+        }
     }
 }

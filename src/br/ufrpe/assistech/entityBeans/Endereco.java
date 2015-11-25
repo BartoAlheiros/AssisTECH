@@ -6,11 +6,13 @@
  */
 package br.ufrpe.assistech.entityBeans;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Michel
  */
-public class Endereco {
+public class Endereco implements Serializable{
     
     private String rua;
     private String numero;

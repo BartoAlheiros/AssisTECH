@@ -2,16 +2,28 @@
 package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.negocio.Fachada;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 
-public class RepositorioCliente implements IRepositorioCliente{
+
+public class RepositorioCliente implements IRepositorioCliente, Serializable{
     private Cliente[] cliente;
-    private int proxima;/*proxima conta de Cliente,
+    private int proxima;
+    private static RepositorioCliente instance;
+    /*proxima conta de Cliente,
                         *dentro do array de Clientes, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
                         *RepositorioContasArray, abaixo.
                         */
+    
+    
     
     public RepositorioCliente(int tamanho){
          this.cliente = new Cliente[tamanho];
@@ -31,7 +43,12 @@ public class RepositorioCliente implements IRepositorioCliente{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-   
+   public static RepositorioCliente getInstance(){ //Singleton
+        if (instance == null) {
+            instance = new RepositorioCliente();
+        }
+        return instance;          
+    }
    public int procurarIndice(String cpf) {
        int i = 0;
        boolean achou = false;
@@ -96,6 +113,16 @@ public class RepositorioCliente implements IRepositorioCliente{
         this.proxima = proxima + 1;
     }
 
- 
+    public void salvador(){
+        try{
+            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPCLI.dat")));              
+            objectOut.writeObject(this);  
+            objectOut.close();  
+        }catch (IOException e){
+            
+        }
+    }
+
+
 }
 

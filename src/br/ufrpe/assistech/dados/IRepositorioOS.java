@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public interface IRepositorioOS {
-RepositorioOS repositorio = new RepositorioOS(100);
+
     
     void cadastrar(OS o);   
         
@@ -25,4 +25,6 @@ RepositorioOS repositorio = new RepositorioOS(100);
     boolean existe(Double d);
    
      void remover(Double d);  
+     
+       void salvador();
 }

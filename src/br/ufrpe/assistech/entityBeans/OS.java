@@ -1,9 +1,10 @@
 
 package br.ufrpe.assistech.entityBeans;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public class OS {
+public class OS implements Serializable{
     private double no;//número da OS
     private LocalDate data;
     private String entrega;

@@ -12,7 +12,7 @@ import br.ufrpe.assistech.entityBeans.Equip;
  * @author Michel
  */
 public interface IRepositorioEquip {
-     RepositorioEquip repositorio = new RepositorioEquip(100);
+   
     
     void cadastrar(Equip e);    
         
@@ -25,4 +25,6 @@ public interface IRepositorioEquip {
     boolean existe(String str);
    
      void remover(String str);  
+     
+       void salvador();
 }
