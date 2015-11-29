@@ -14,7 +14,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public class Fachada implements IFachada {
-    //Atributos como referência 
+    //Atributos como referências para os cadastros 
     private CadastroCliente clientes;
     private CadastroEquipamento equipamentos;
     private CadastroOS ordens;

@@ -32,8 +32,8 @@ public class CadastroCliente {
     
     public void cadastrar(Cliente c){
         if(c != null && !this.existe(c.getCpf())){
-        repositorio.cadastrar(c);
-        repositorio2.cadastrar(c.getEndereco());
+            repositorio.cadastrar(c);
+            repositorio2.cadastrar(c.getEndereco());
         }else{
             
         }
