@@ -7,6 +7,10 @@ package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -15,7 +19,8 @@ import br.ufrpe.assistech.entityBeans.OS;
 public class RepositorioOS implements IRepositorioOS {
     
     private OS[] ArrayOS;
-    private int proxima;/*proxima conta de ArrayOS,
+    private int proxima;
+     private static RepositorioOS instance;/*proxima conta de ArrayOS,
                         *dentro do array de ArrayOS, que será criado
                         *com o tamanho, passado pelo usuário,
                         *como parâmetro para o Construtor da classe
@@ -26,8 +31,16 @@ public class RepositorioOS implements IRepositorioOS {
         this.ArrayOS = new OS[tamanho];
         this.proxima = 0;
     }
-    
+    public RepositorioOS(){
+        
+    }
    
+     public static RepositorioOS getInstance(){ //Singleton
+        if (instance == null) {
+            instance = new RepositorioOS();
+        }
+        return instance;          
+    }
     public void cadastrar(OS c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
@@ -96,5 +109,13 @@ public class RepositorioOS implements IRepositorioOS {
         
         }
     }
-
+public void salvador(){
+        try{
+            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPOS.dat")));              
+            objectOut.writeObject(this);  
+            objectOut.close();  
+        }catch (IOException e){
+            
+        }
+    }
 }

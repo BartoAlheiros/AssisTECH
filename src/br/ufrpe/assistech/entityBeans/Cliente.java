@@ -1,8 +1,10 @@
 
 package br.ufrpe.assistech.entityBeans;
 
+import java.io.Serializable;
 
-public class Cliente {
+
+public class Cliente implements Serializable{
     private String cpf;
     private String nome;
     private String telefoneFixo;

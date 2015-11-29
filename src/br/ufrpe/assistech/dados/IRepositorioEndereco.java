@@ -13,7 +13,7 @@ import br.ufrpe.assistech.entityBeans.Endereco;
  * @author Michel
  */
 public interface IRepositorioEndereco {
-    RepositorioEndereco repositorio = new RepositorioEndereco(100);
+
       void cadastrar(Endereco end);   
         
     
@@ -21,4 +21,6 @@ public interface IRepositorioEndereco {
     
    
      void remover(Cliente c);  
+     
+      void salvador();
 }
