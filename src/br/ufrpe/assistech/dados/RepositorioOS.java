@@ -8,9 +8,14 @@ package br.ufrpe.assistech.dados;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -109,7 +114,10 @@ public class RepositorioOS implements IRepositorioOS {
         
         }
     }
-public void salvador(){
+
+    
+    
+    /*public void salvador(){
         try{
             ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPOS.dat")));              
             objectOut.writeObject(this);  
@@ -117,5 +125,55 @@ public void salvador(){
         }catch (IOException e){
             
         }
+    }*/
+    
+    public void salvador(){
+        
+        try {
+            FileOutputStream out = new FileOutputStream("repOS");
+            BufferedOutputStream buffer = new BufferedOutputStream(out);
+            ObjectOutputStream objOut = new ObjectOutputStream(buffer);
+            objOut.writeObject(instance);
+            
+            objOut.close();
+            
+            System.out.println("Escrevi!");
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        /*FileOutputStream out = new FileOutputStream("repCliente");
+            ObjectOutputStream objectOut = new ObjectOutputStream(out);
+            objectOut.writeObject(objectOut);  
+            objectOut.close();  */
+    
+    }
+    
+    
+    public RepositorioOS recuperar(){
+        
+        //RepositorioCliente repCliente = new RepositorioCliente(100);
+        
+        try {
+            FileInputStream in = new FileInputStream("repOS");
+            ObjectInputStream objIn = new ObjectInputStream(in);
+            
+            instance = (RepositorioOS) objIn.readObject();
+            
+            //System.out.println(av.getNome());
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        return instance;
     }
 }

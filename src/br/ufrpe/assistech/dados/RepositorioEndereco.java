@@ -8,9 +8,14 @@ package br.ufrpe.assistech.dados;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Endereco;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +27,8 @@ public class RepositorioEndereco implements IRepositorioEndereco {
     private Endereco[] endereco;
    
     private int proxima;
-        private static RepositorioEndereco instance;
+    private static RepositorioEndereco instance;
+    
     public RepositorioEndereco(int tamanho){
          this.endereco = new Endereco[tamanho];
          this.proxima = 0;
@@ -71,13 +77,54 @@ public class RepositorioEndereco implements IRepositorioEndereco {
         this.endereco[this.proxima] = (Endereco) o;
         this.proxima = proxima + 1;
     }
+    
     public void salvador(){
-        try{
-            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEND.dat")));              
-            objectOut.writeObject(this);  
-            objectOut.close();  
-        }catch (IOException e){
+        
+        try {
+            FileOutputStream out = new FileOutputStream("repEndereco");
+            BufferedOutputStream buffer = new BufferedOutputStream(out);
+            ObjectOutputStream objOut = new ObjectOutputStream(buffer);
+            objOut.writeObject(instance);
             
+            objOut.close();
+            
+            System.out.println("Escrevi!");
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
+        /*FileOutputStream out = new FileOutputStream("repCliente");
+            ObjectOutputStream objectOut = new ObjectOutputStream(out);
+            objectOut.writeObject(objectOut);  
+            objectOut.close();  */
+    
+    }
+    
+    
+    public RepositorioEndereco recuperar(){
+        
+        //RepositorioCliente repCliente = new RepositorioCliente(100);
+        
+        try {
+            FileInputStream in = new FileInputStream("repEndereco");
+            ObjectInputStream objIn = new ObjectInputStream(in);
+            
+            instance = (RepositorioEndereco) objIn.readObject();
+            
+            //System.out.println(av.getNome());
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        return instance;
     }
 }

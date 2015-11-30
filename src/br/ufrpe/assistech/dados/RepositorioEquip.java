@@ -7,9 +7,14 @@ package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Equip;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -109,14 +114,55 @@ public class RepositorioEquip implements IRepositorioEquip {
         
         }
     }
-public void salvador(){
-        try{
-            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
-            objectOut.writeObject(this);  
-            objectOut.close();  
-        }catch (IOException e){
+    
+    public void salvador(){
+        
+        try {
+            FileOutputStream out = new FileOutputStream("repEquip");
+            BufferedOutputStream buffer = new BufferedOutputStream(out);
+            ObjectOutputStream objOut = new ObjectOutputStream(buffer);
+            objOut.writeObject(instance);
             
+            objOut.close();
+            
+            System.out.println("Escrevi!");
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
+        /*FileOutputStream out = new FileOutputStream("repCliente");
+            ObjectOutputStream objectOut = new ObjectOutputStream(out);
+            objectOut.writeObject(objectOut);  
+            objectOut.close();  */
+    
+    }
+    
+    
+    public RepositorioEquip recuperar(){
+        
+        //RepositorioCliente repCliente = new RepositorioCliente(100);
+        
+        try {
+            FileInputStream in = new FileInputStream("repEquip");
+            ObjectInputStream objIn = new ObjectInputStream(in);
+            
+            instance = (RepositorioEquip) objIn.readObject();
+            
+            //System.out.println(av.getNome());
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        return instance;
     }
   
 }

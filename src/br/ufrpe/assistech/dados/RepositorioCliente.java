@@ -117,13 +117,17 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         this.cliente[this.proxima] = (Cliente) c;
         this.proxima = proxima + 1;
     }
-
+            /*ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
+            objectOut.writeObject(this);  
+            objectOut.close();  */
+    
     public void salvador(){
         
         try {
             FileOutputStream out = new FileOutputStream("repCliente");
-            ObjectOutputStream objOut = new ObjectOutputStream(out);
-            objOut.writeObject(this);
+            BufferedOutputStream buffer = new BufferedOutputStream(out);
+            ObjectOutputStream objOut = new ObjectOutputStream(buffer);
+            objOut.writeObject(instance);
             
             objOut.close();
             
@@ -146,13 +150,13 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     
     public RepositorioCliente recuperar(){
         
-        RepositorioCliente repCliente = new RepositorioCliente(100);
+        //RepositorioCliente repCliente = new RepositorioCliente(100);
         
         try {
             FileInputStream in = new FileInputStream("repCliente");
             ObjectInputStream objIn = new ObjectInputStream(in);
             
-            repCliente = (RepositorioCliente) objIn.readObject();
+            instance = (RepositorioCliente) objIn.readObject();
             
             //System.out.println(av.getNome());
             
@@ -164,7 +168,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
             Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
             
-        return repCliente;
+        return instance;
     }
         
 
