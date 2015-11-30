@@ -50,10 +50,11 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     
    public static RepositorioCliente getInstance(){ //Singleton
         if (instance == null) {
-            instance = new RepositorioCliente();
+            instance = new RepositorioCliente(100);
         }
         return instance;          
     }
+   
    public int procurarIndice(String cpf) {
        int i = 0;
        boolean achou = false;
@@ -120,6 +121,16 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
             /*ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
             objectOut.writeObject(this);  
             objectOut.close();  */
+    
+    private void duplicaArrayClientes() {
+        if (this.cliente != null && this.cliente.length > 0) {
+            Cliente[] arrayDuplicado = new Cliente[this.cliente.length * 2];
+            for (int i = 0; i < this.cliente.length; i++) {
+                arrayDuplicado[i] = this.cliente[i];
+            }
+            this.cliente = arrayDuplicado;
+        }
+    }
     
     public void salvador(){
         

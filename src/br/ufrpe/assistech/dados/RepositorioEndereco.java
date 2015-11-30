@@ -74,8 +74,18 @@ public class RepositorioEndereco implements IRepositorioEndereco {
 
     
     public void cadastrar(Endereco o) {
-        this.endereco[this.proxima] = (Endereco) o;
+        this.endereco[this.proxima] = o;
         this.proxima = proxima + 1;
+    }
+    
+    private void duplicaArrayEndereco() {
+        if (this.endereco != null && this.endereco.length > 0) {
+            Endereco[] arrayDuplicado = new Endereco[this.endereco.length * 2];
+            for (int i = 0; i < this.endereco.length; i++) {
+                arrayDuplicado[i] = this.endereco[i];
+            }
+            this.endereco = arrayDuplicado;
+        }
     }
     
     public void salvador(){
