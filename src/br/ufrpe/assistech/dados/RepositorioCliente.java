@@ -5,10 +5,13 @@ import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.negocio.Fachada;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -114,15 +117,31 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     }
 
     public void salvador(){
-        try{
-            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPCLI.dat")));              
-            objectOut.writeObject(this);  
-            objectOut.close();  
-        }catch (IOException e){
+        
+        try {
+            FileOutputStream out = new FileOutputStream("repCliente");
+            ObjectOutputStream objOut = new ObjectOutputStream(out);
+            objOut.writeObject(this);
             
+            objOut.close();
+            
+            System.out.println("Escrevi!");
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
+        /*FileOutputStream out = new FileOutputStream("repCliente");
+            ObjectOutputStream objectOut = new ObjectOutputStream(out);
+            objectOut.writeObject(objectOut);  
+            objectOut.close();  */
+    
     }
-
+    
+        
 
 }
 

@@ -22,8 +22,8 @@ public interface IRepositorioCliente {
     
     boolean existe(String str);
    
-     void remover(String str); 
+    void remover(String str); 
      
-       void salvador();
+    void salvador();
 }
 
