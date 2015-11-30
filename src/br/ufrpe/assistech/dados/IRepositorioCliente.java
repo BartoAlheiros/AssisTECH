@@ -24,6 +24,6 @@ public interface IRepositorioCliente {
    
     void remover(String str); 
      
-    void salvador();
+    void salvar();
 }
 

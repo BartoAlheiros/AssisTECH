@@ -34,6 +34,10 @@ public class CadastroEquipamento {
         
     }
     
+    public void salvar(){
+         this.repositorio.salvar();
+     }
+    
     public Equip procurar(String serie){
         return this.repositorio.procurar(serie);//Método que delega a responsabilidade
                                                // de procurar a conta para o repositório.

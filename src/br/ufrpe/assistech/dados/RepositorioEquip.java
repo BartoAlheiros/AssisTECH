@@ -125,7 +125,7 @@ public class RepositorioEquip implements IRepositorioEquip {
         }
     }
     
-    public void salvador(){
+    public void salvar(){
         
          
         if (instance == null) {

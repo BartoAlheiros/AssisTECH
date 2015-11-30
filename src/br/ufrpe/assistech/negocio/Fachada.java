@@ -14,7 +14,7 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author Michel
  */
 public class Fachada implements IFachada {
-    //Atributos como referências para os cadastros 
+    //Cada atributo abaixo é uma instância de um Cadastro. 
     private CadastroCliente clientes;
     private CadastroEquipamento equipamentos;
     private CadastroOS ordens;
@@ -37,6 +37,10 @@ public class Fachada implements IFachada {
     @Override
     public void cadastrarCliente (Cliente c) {
         this.clientes.cadastrar(c);
+    }
+    
+    public void salvar(){
+         this.clientes.salvar();
     }
     
     @Override

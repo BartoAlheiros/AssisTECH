@@ -45,6 +45,10 @@ public class CadastroOS  {
      public boolean existe(Double no){
         return this.repositorio.existe(no);
     }
+     
+    public void salvar(){
+         this.repositorio.salvar();
+     } 
     
     public boolean finalizarServico(Double no){ //método para descadastrar
                                                    //uma OS.

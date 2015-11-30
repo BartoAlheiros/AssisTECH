@@ -124,9 +124,9 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     public void cadastrar(Cliente c) {
         this.cliente[this.proxima] = (Cliente) c;
         this.proxima = proxima + 1;
-        if (this.proxima == this.cliente.length) {
+        /*if (this.proxima == this.cliente.length) {
             this.duplicaArrayClientes();
-        }
+        }*/
     }
             /*ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
             objectOut.writeObject(this);  
@@ -142,7 +142,13 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         }
     }
     
-    public void salvador(){
+    public void getRepositorioCliente(Cliente[] cliente){
+        for (int i = 0; i < this.cliente.length; i++) {
+                System.out.println(cliente[i]);
+            }
+    }
+    
+    public void salvar(){
         
         if (instance == null) {
             return;

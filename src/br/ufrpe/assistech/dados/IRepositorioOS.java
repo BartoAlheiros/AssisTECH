@@ -24,7 +24,7 @@ public interface IRepositorioOS {
     
     boolean existe(Double d);
    
-     void remover(Double d);  
+    void remover(Double d);  
      
-       void salvador();
+    void salvar();
 }

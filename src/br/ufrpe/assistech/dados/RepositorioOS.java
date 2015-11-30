@@ -127,7 +127,7 @@ public class RepositorioOS implements IRepositorioOS {
         }
     }
 
-    public void salvador(){
+    public void salvar(){
         
          
         if (instance == null) {

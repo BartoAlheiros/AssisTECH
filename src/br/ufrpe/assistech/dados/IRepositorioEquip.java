@@ -24,7 +24,7 @@ public interface IRepositorioEquip {
     
     boolean existe(String str);
    
-     void remover(String str);  
+    void remover(String str);  
      
-       void salvador();
+    void salvar();
 }

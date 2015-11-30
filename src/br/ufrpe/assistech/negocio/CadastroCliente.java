@@ -49,6 +49,10 @@ public class CadastroCliente {
         return this.repositorio.existe(cpf);
     }
     
+    public void salvar(){
+         this.repositorio.salvar();
+    }
+    
     public boolean descadastrar(String cpf){ 
         Cliente c = this.repositorio.procurar(cpf);
         boolean aux = false;

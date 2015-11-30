@@ -14,13 +14,13 @@ import br.ufrpe.assistech.entityBeans.Endereco;
  */
 public interface IRepositorioEndereco {
 
-      void cadastrar(Endereco end);   
+    void cadastrar(Endereco end);   
         
     
     int procurarIndice(Cliente c);
     
    
-     void remover(Cliente c);  
+    void remover(Cliente c);  
      
-      void salvador();
+    void salvar();
 }

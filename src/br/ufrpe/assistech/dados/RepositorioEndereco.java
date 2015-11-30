@@ -91,7 +91,7 @@ public class RepositorioEndereco implements IRepositorioEndereco {
         }
     }
     
-    public void salvador(){
+    public void salvar(){
          
         if (instance == null) {
             return;

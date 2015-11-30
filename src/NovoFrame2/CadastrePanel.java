@@ -5,8 +5,12 @@
  */
 package NovoFrame2;
 
+import br.ufrpe.assistech.dados.IRepositorioCliente;
+import br.ufrpe.assistech.dados.RepositorioCliente;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.negocio.Fachada;
+import br.ufrpe.assistech.negocio.IFachada;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +22,8 @@ public class CadastrePanel extends javax.swing.JPanel {
      * Creates new form Panel1
      */
     
-    private Fachada u = new Fachada();
+    IFachada fachada = Fachada.getInstance();
+    IRepositorioCliente cliente = RepositorioCliente.getInstance();
     private Cliente c = new Cliente();
             
     public CadastrePanel() {
@@ -52,6 +57,8 @@ public class CadastrePanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jbtnCadastrar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jLabel6.setText("Rua:");
 
@@ -90,6 +97,10 @@ public class CadastrePanel extends javax.swing.JPanel {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +122,7 @@ public class CadastrePanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtxtCampoCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                        .addComponent(jtxtCampoCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -137,6 +148,10 @@ public class CadastrePanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbtnCadastrar)
                 .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +180,9 @@ public class CadastrePanel extends javax.swing.JPanel {
                     .addComponent(jtxtCampoNumeroResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(jtxtCampoEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
                 .addComponent(jbtnCadastrar)
                 .addGap(24, 24, 24))
         );
@@ -185,7 +202,16 @@ public class CadastrePanel extends javax.swing.JPanel {
         String email = jtxtCampoEmail.getText();
         c.setNome(nome);
         c.setEmail(email);
+        //JOptionPane.showMessageDialog(null, "Apenas setei no Cliente!" + nome);
         
+        fachada.cadastrarCliente(c);
+        JOptionPane.showMessageDialog(null, "Cadastrei!!!" + nome);
+        fachada.salvar();
+        JOptionPane.showMessageDialog(null, "Salvei!" + nome);
+        
+        
+        jTextArea1.setText(nome);
+        jTextArea1.setText(email);
     }//GEN-LAST:event_jbtnCadastrarActionPerformed
 
 
@@ -199,6 +225,8 @@ public class CadastrePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLblDadosEndereco;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbtnCadastrar;
     private javax.swing.JTextField jtxtCampoCelular;

@@ -14,6 +14,8 @@ import br.ufrpe.assistech.entityBeans.OS;
  * @author alheirosb
  */
 public interface IFachada {
+
+    void salvar();
     
     void cadastrarCliente (Cliente c);
     
