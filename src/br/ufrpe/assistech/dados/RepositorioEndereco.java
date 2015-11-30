@@ -33,15 +33,18 @@ public class RepositorioEndereco implements IRepositorioEndereco {
          this.endereco = new Endereco[tamanho];
          this.proxima = 0;
     }
+    
     public RepositorioEndereco(){
         
     }
-  public static RepositorioEndereco getInstance(){ //Singleton
+    
+    public static IRepositorioEndereco getInstance() {
         if (instance == null) {
-            instance = new RepositorioEndereco();
+            instance = lerDoArquivo();
         }
-        return instance;          
+        return instance;
     }
+  
    public int procurarIndice(Cliente c) {
        int i = 0;
        boolean achou = false;
@@ -89,7 +92,10 @@ public class RepositorioEndereco implements IRepositorioEndereco {
     }
     
     public void salvador(){
-        
+         
+        if (instance == null) {
+            return;
+        }//se a instância é nula, eu fecho o método salvarArquivo com o comando return;
         try {
             FileOutputStream out = new FileOutputStream("repEndereco");
             BufferedOutputStream buffer = new BufferedOutputStream(out);
@@ -115,7 +121,7 @@ public class RepositorioEndereco implements IRepositorioEndereco {
     }
     
     
-    public RepositorioEndereco recuperar(){
+    private static RepositorioEndereco lerDoArquivo(){
         
         //RepositorioCliente repCliente = new RepositorioCliente(100);
         

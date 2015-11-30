@@ -48,11 +48,18 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-   public static RepositorioCliente getInstance(){ //Singleton
+   /*public static RepositorioCliente getInstance(){ //Singleton
         if (instance == null) {
             instance = new RepositorioCliente(100);
         }
         return instance;          
+    }*/
+    
+    public static IRepositorioCliente getInstance() {
+        if (instance == null) {
+            instance = lerDoArquivo();
+        }
+        return instance;
     }
    
    public int procurarIndice(String cpf) {
@@ -117,6 +124,9 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     public void cadastrar(Cliente c) {
         this.cliente[this.proxima] = (Cliente) c;
         this.proxima = proxima + 1;
+        if (this.proxima == this.cliente.length) {
+            this.duplicaArrayClientes();
+        }
     }
             /*ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPEQUIP.dat")));              
             objectOut.writeObject(this);  
@@ -134,6 +144,9 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     
     public void salvador(){
         
+        if (instance == null) {
+            return;
+        }//se a instância é nula, eu fecho o método salvarArquivo com o comando return;
         try {
             FileOutputStream out = new FileOutputStream("repCliente");
             BufferedOutputStream buffer = new BufferedOutputStream(out);
@@ -150,16 +163,11 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         } catch (IOException ex) {
             Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        /*FileOutputStream out = new FileOutputStream("repCliente");
-            ObjectOutputStream objectOut = new ObjectOutputStream(out);
-            objectOut.writeObject(objectOut);  
-            objectOut.close();  */
     
     }
     
     
-    public RepositorioCliente recuperar(){
+    private static RepositorioCliente lerDoArquivo(){
         
         //RepositorioCliente repCliente = new RepositorioCliente(100);
         
@@ -181,7 +189,6 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
             
         return instance;
     }
-        
 
 }
 

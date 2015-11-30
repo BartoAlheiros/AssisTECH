@@ -40,12 +40,13 @@ public class RepositorioOS implements IRepositorioOS {
         
     }
    
-     public static RepositorioOS getInstance(){ //Singleton
+    public static IRepositorioOS getInstance() {
         if (instance == null) {
-            instance = new RepositorioOS();
+            instance = lerDoArquivo();
         }
-        return instance;          
+        return instance;
     }
+    
     public void cadastrar(OS c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
@@ -114,21 +115,24 @@ public class RepositorioOS implements IRepositorioOS {
         
         }
     }
-
     
-    
-    /*public void salvador(){
-        try{
-            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("REPOS.dat")));              
-            objectOut.writeObject(this);  
-            objectOut.close();  
-        }catch (IOException e){
-            
+    private void duplicaArrayO() {
+        
+        if (this.ArrayOS != null && this.ArrayOS.length > 0) {
+            OS[] arrayDuplicado = new OS[this.ArrayOS.length * 2];
+            for (int i = 0; i < this.ArrayOS.length; i++) {
+                arrayDuplicado[i] = this.ArrayOS[i];
+            }
+            this.ArrayOS = arrayDuplicado;
         }
-    }*/
-    
+    }
+
     public void salvador(){
         
+         
+        if (instance == null) {
+            return;
+        }//se a instância é nula, eu fecho o método salvarArquivo com o comando return;
         try {
             FileOutputStream out = new FileOutputStream("repOS");
             BufferedOutputStream buffer = new BufferedOutputStream(out);
@@ -145,26 +149,17 @@ public class RepositorioOS implements IRepositorioOS {
         } catch (IOException ex) {
             Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        /*FileOutputStream out = new FileOutputStream("repCliente");
-            ObjectOutputStream objectOut = new ObjectOutputStream(out);
-            objectOut.writeObject(objectOut);  
-            objectOut.close();  */
-    
+        
     }
     
     
-    public RepositorioOS recuperar(){
-        
-        //RepositorioCliente repCliente = new RepositorioCliente(100);
+    private static RepositorioOS lerDoArquivo(){
         
         try {
             FileInputStream in = new FileInputStream("repOS");
             ObjectInputStream objIn = new ObjectInputStream(in);
             
             instance = (RepositorioOS) objIn.readObject();
-            
-            //System.out.println(av.getNome());
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);

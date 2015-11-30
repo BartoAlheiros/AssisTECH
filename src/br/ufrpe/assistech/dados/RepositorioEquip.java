@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class RepositorioEquip implements IRepositorioEquip {
     
-    private Equip[] Equip; 
+    private Equip[] equip; 
     private int proxima;
     private static RepositorioEquip instance;/*proximo Equipamento,
                         *dentro do array de Equip, que será criado
@@ -34,31 +34,31 @@ public class RepositorioEquip implements IRepositorioEquip {
         
     }
     public RepositorioEquip(int tamanho){
-        this.Equip = new Equip[tamanho];
+        this.equip = new Equip[tamanho];
         this.proxima = 0;
     }
     
- public static RepositorioEquip getInstance(){ //Singleton
+    public static IRepositorioEquip getInstance() {
         if (instance == null) {
-            instance = new RepositorioEquip();
+            instance = lerDoArquivo();
         }
-        return instance;          
+        return instance;
     }
     public void cadastrar(Equip c){           /*1 - atualiza a variavel proxima
                                                 *para indicar a proxima            
                                                 *posição vazia do Array.    
                                                 *2 - Método que cadastra uma conta
                                                 */
-        this.Equip[this.proxima] = (Equip) c;
+        this.equip[this.proxima] = (Equip) c;
         this.proxima = proxima + 1;
     }
         
 
-   public int procurarIndice(String serie) {
+    public int procurarIndice(String serie) {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
-            if (serie.equals(this.Equip[i].getSerie())) {
+            if (serie.equals(this.equip[i].getSerie())) {
             achou = true;
             
             } 
@@ -90,11 +90,21 @@ public class RepositorioEquip implements IRepositorioEquip {
         Equip resultado = null;
         
         if (i != this.proxima) {
-        resultado = this.Equip[i];
+        resultado = this.equip[i];
         }
         
         return resultado;
           
+    }
+    
+    private void duplicaArrayEquip() {
+        if (this.equip != null && this.equip.length > 0) {
+            Equip[] arrayDuplicado = new Equip[this.equip.length * 2];
+            for (int i = 0; i < this.equip.length; i++) {
+                arrayDuplicado[i] = this.equip[i];
+            }
+            this.equip = arrayDuplicado;
+        }
     }
    
 
@@ -103,8 +113,8 @@ public class RepositorioEquip implements IRepositorioEquip {
     
         if (i != this.proxima) {
         
-        this.Equip[i] = this.Equip[this.proxima - 1];
-        this.Equip[this.proxima - 1] = null;
+        this.equip[i] = this.equip[this.proxima - 1];
+        this.equip[this.proxima - 1] = null;
         this.proxima = this.proxima - 1;
     
         
@@ -117,6 +127,10 @@ public class RepositorioEquip implements IRepositorioEquip {
     
     public void salvador(){
         
+         
+        if (instance == null) {
+            return;
+        }//se a instância é nula, eu fecho o método salvarArquivo com o comando return;
         try {
             FileOutputStream out = new FileOutputStream("repEquip");
             BufferedOutputStream buffer = new BufferedOutputStream(out);
@@ -134,15 +148,10 @@ public class RepositorioEquip implements IRepositorioEquip {
             Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-        /*FileOutputStream out = new FileOutputStream("repCliente");
-            ObjectOutputStream objectOut = new ObjectOutputStream(out);
-            objectOut.writeObject(objectOut);  
-            objectOut.close();  */
-    
     }
     
     
-    public RepositorioEquip recuperar(){
+    private static RepositorioEquip lerDoArquivo(){
         
         //RepositorioCliente repCliente = new RepositorioCliente(100);
         

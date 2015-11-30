@@ -20,7 +20,7 @@ public class Fachada implements IFachada {
     private CadastroOS ordens;
     private static Fachada instance;
     
-    private Fachada () {
+    public Fachada () {
         //Contrutor privado para garantir que não haja instâncias fora da classe
         this.clientes = new CadastroCliente();
         this.equipamentos = new CadastroEquipamento();
