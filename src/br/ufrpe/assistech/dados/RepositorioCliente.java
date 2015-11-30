@@ -5,9 +5,11 @@ import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.negocio.Fachada;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -141,6 +143,29 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     
     }
     
+    
+    public RepositorioCliente recuperar(){
+        
+        RepositorioCliente repCliente = new RepositorioCliente(100);
+        
+        try {
+            FileInputStream in = new FileInputStream("repCliente");
+            ObjectInputStream objIn = new ObjectInputStream(in);
+            
+            repCliente = (RepositorioCliente) objIn.readObject();
+            
+            //System.out.println(av.getNome());
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RepositorioCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        return repCliente;
+    }
         
 
 }
