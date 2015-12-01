@@ -8,6 +8,7 @@ package br.ufrpe.assistech.negocio;
 import br.ufrpe.assistech.dados.IRepositorioCliente;
 import br.ufrpe.assistech.dados.IRepositorioEndereco;
 import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.exceptions.CNEException;
 
 
 
@@ -36,7 +37,7 @@ public class CadastroEndereco {
                                                              */
     }
     
-    public void cadastrar(Cliente c){
+    public void cadastrar(Cliente c)throws CNEException{
         if(c != null && !this.existe(c.getCpf())){
             repositorio.cadastrar(c);
             repositorio2.cadastrar(c.getEndereco());
@@ -46,12 +47,12 @@ public class CadastroEndereco {
         
     }
     
-    public Cliente procurar(String cpf){
+    public Cliente procurar(String cpf)throws CNEException{
         return this.repositorio.procurar(cpf);//Método que delega a responsabilidade
                                                // de procurar a conta para o repositório.
     }
     
-    public boolean existe(String cpf){
+    public boolean existe(String cpf)throws CNEException{
         return this.repositorio.existe(cpf);
     }
     
@@ -59,7 +60,7 @@ public class CadastroEndereco {
          this.repositorio.salvar();
      }
     
-    public boolean descadastrar(String cpf){ 
+    public boolean descadastrar(String cpf)throws CNEException{ 
         Cliente c = this.repositorio.procurar(cpf);
         boolean aux = false;
         if(c != null){
