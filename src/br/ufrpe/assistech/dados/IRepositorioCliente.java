@@ -6,6 +6,7 @@
 package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.exceptions.CNEException;
 
 /**
  *
@@ -16,13 +17,13 @@ public interface IRepositorioCliente {
     void cadastrar(Cliente c);   
         
     
-    int procurarIndice(String str);
+    int procurarIndice(String str) throws CNEException;
 
-    Cliente procurar(String str);
+    Cliente procurar(String str) throws CNEException;
     
-    boolean existe(String str);
+    boolean existe(String str) throws CNEException;
    
-    void remover(String str); 
+    void remover(String str) throws CNEException; 
      
     void salvar();
 }

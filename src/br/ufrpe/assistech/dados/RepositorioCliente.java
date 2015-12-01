@@ -2,6 +2,7 @@
 package br.ufrpe.assistech.dados;
 
 import br.ufrpe.assistech.entityBeans.Cliente;
+import br.ufrpe.assistech.exceptions.CNEException;
 import br.ufrpe.assistech.negocio.Fachada;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -62,22 +63,26 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         return instance;
     }
    
-   public int procurarIndice(String cpf) {
+   public int procurarIndice(String cpf) throws CNEException {
        int i = 0;
        boolean achou = false;
        while ((!achou) && (i < this.proxima)) {
             if (cpf.equals(this.cliente[i].getCpf())) {
             achou = true;
             } else {
-            i = i + 1;
+           i++;
             }
-       
+       }
+       if (achou != true){
+           CNEException E = new CNEException(cpf);
+         
+           throw E;
        }
       return i;
     }
    
 
-    public boolean existe(String cpf){
+    public boolean existe(String cpf) throws CNEException{
        boolean existe = false;
        int indice = this.procurarIndice(cpf);
        if (indice != proxima){
@@ -87,7 +92,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     }
     
 
-    public Cliente procurar(String cpf){        /*procura uma conta, recebendo
+    public Cliente procurar(String cpf) throws CNEException{        /*procura uma conta, recebendo
                                                 *como parâmetro o número dessa
                                                 *conta.
                                                 */
@@ -104,7 +109,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     }
    
 
-    public void remover(String cpf) {
+    public void remover(String cpf) throws CNEException {
         int i = this.procurarIndice(cpf);
      
         if (i != this.proxima) {

@@ -5,6 +5,10 @@
  */
 package br.ufrpe.assistech.negocio;
 
+import br.ufrpe.assistech.dados.IRepositorioCliente;
+import br.ufrpe.assistech.dados.IRepositorioEndereco;
+import br.ufrpe.assistech.entityBeans.Cliente;
+
 
 
 /**
@@ -12,7 +16,8 @@ package br.ufrpe.assistech.negocio;
  * @author aluno
  */
 public class CadastroEndereco {
-    private IRepositorioEndereco repositorio;
+    private IRepositorioEndereco repositorio2;
+    private IRepositorioCliente repositorio;
     
 
     public CadastroEndereco(){
