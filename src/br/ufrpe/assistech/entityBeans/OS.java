@@ -11,7 +11,8 @@ public class OS implements Serializable{
     public Equip equipamento;
     public Cliente cliente;
     private boolean naoAtiva; // para o método descadastrar do controlador de OS saber se a OS está ativa
-    private String servico;   //ou não e assim poder eliminá-la ou não.
+    private String descricao;
+    private EnumServicos servicos;//ou não e assim poder eliminá-la ou não.
                                //
     LocalDate hoje = LocalDate.now();
     
@@ -21,9 +22,9 @@ public class OS implements Serializable{
         
     }
     
-    public OS(String servico) { 
+    public OS(String descricao) { 
         this.no = 1;
-        this.servico = servico;
+        this.descricao = descricao;
         this.data = hoje;
         this.entrega = "19/10/2015";
         this.naoAtiva =  false; 
@@ -57,12 +58,12 @@ public class OS implements Serializable{
        return this.naoAtiva;
    }
    
-   public String getServico() {
-       return this.servico;
+   public String getDescricao() {
+       return this.descricao;
    }
    
    public void setServico(String servico) {
-       this.servico = servico;
+       this.descricao = descricao;
    }
    
    public Cliente getCliente(){
