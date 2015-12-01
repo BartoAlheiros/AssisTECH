@@ -8,6 +8,7 @@ package br.ufrpe.assistech.negocio;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
+import br.ufrpe.assistech.exceptions.CNEException;
 
 /**
  *
@@ -35,7 +36,7 @@ public class Fachada implements IFachada {
     }
     //Chamada de Métodos 
     @Override
-    public void cadastrarCliente (Cliente c) {
+    public void cadastrarCliente (Cliente c) throws CNEException{
         this.clientes.cadastrar(c);
     }
     
@@ -54,7 +55,7 @@ public class Fachada implements IFachada {
     }
 
     @Override
-    public Cliente procurarCliente(String cpf){
+    public Cliente procurarCliente(String cpf) throws CNEException{
         return this.clientes.procurar(cpf);
     }
     
@@ -69,7 +70,7 @@ public class Fachada implements IFachada {
     }
     
     @Override
-    public void descadastrarCliente (String cpf) {
+    public void descadastrarCliente (String cpf) throws CNEException {
         this.clientes.descadastrar(cpf);
     }
     

@@ -81,7 +81,7 @@ public class SearchPanel extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

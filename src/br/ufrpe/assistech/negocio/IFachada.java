@@ -8,6 +8,7 @@ package br.ufrpe.assistech.negocio;
 import br.ufrpe.assistech.entityBeans.Cliente;
 import br.ufrpe.assistech.entityBeans.Equip;
 import br.ufrpe.assistech.entityBeans.OS;
+import br.ufrpe.assistech.exceptions.CNEException;
 
 /**
  *
@@ -17,19 +18,19 @@ public interface IFachada {
 
     void salvar();
     
-    void cadastrarCliente (Cliente c);
+    void cadastrarCliente (Cliente c) throws CNEException;
     
     void cadastrarEquipamento (Equip e);
     
     void gerarOS (OS o);
     
-    Cliente procurarCliente(String cpf);
+    Cliente procurarCliente(String cpf) throws CNEException;
     
     Equip procurarEquipamento(String serie);
     
     OS procurarOrdem (Double no);
     
-    void descadastrarCliente (String cpf);
+    void descadastrarCliente (String cpf) throws CNEException;
     
     void descadastraEquipamento (String serie);
     
