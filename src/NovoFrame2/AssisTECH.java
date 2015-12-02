@@ -19,6 +19,9 @@ public class AssisTECH extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     jIFCadastro f = new jIFCadastro();
+    jIFBuscaOrdem buscaordem = new jIFBuscaOrdem();
+    jIFBuscaCliente internalbuscacliente = new jIFBuscaCliente();
+    jIFBuscaEquipamento internalbuscaequip = new jIFBuscaEquipamento();
     
     public AssisTECH() {
         super("AssisTECH");
@@ -95,6 +98,11 @@ public class AssisTECH extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("OS");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -112,7 +120,7 @@ public class AssisTECH extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -134,22 +142,32 @@ public class AssisTECH extends javax.swing.JFrame {
          internalbuscaequip.setVisible(false);
         f.setVisible(true);
     }//GEN-LAST:event_mnuFrame1ActionPerformed
-jIFBuscaEquipamento internalbuscaequip = new jIFBuscaEquipamento();
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         desktop.add(internalbuscaequip);
+        buscaordem.setVisible(true);
         f.setVisible(false);
         internalbuscacliente.setVisible(false);
          internalbuscaequip.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-jIFBuscaCliente internalbuscacliente = new jIFBuscaCliente();
+
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         desktop.add(internalbuscacliente);
         f.setVisible(false);
+        buscaordem.setVisible(false);
          internalbuscaequip.setVisible(false);
         internalbuscacliente.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        desktop.add(buscaordem);
+        internalbuscaequip.setVisible(false);
+        internalbuscacliente.setVisible(false);
+        buscaordem.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

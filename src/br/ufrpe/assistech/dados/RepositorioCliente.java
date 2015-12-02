@@ -49,20 +49,20 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-   /*public static RepositorioCliente getInstance(){ //Singleton
+   public static RepositorioCliente getInstance(){ //Singleton
         if (instance == null) {
             instance = new RepositorioCliente(100);
         }
         return instance;          
-    }*/
+    }
     
-    public static IRepositorioCliente getInstance() {
+   /* public static IRepositorioCliente getInstance() {
         if (instance == null) {
             instance = lerDoArquivo();
         }
         return instance;
     }
-   
+   */
    public int procurarIndice(String cpf) throws CNEException {
        int i = 0;
        boolean achou = false;
@@ -178,7 +178,7 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
     }
     
     
-    private static RepositorioCliente lerDoArquivo(){
+   /* private static RepositorioCliente lerDoArquivo(){
         
         //RepositorioCliente repCliente = new RepositorioCliente(100);
         
@@ -200,6 +200,6 @@ public class RepositorioCliente implements IRepositorioCliente, Serializable{
             
         return instance;
     }
-
+*/
 }
 

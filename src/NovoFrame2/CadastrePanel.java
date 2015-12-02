@@ -25,10 +25,10 @@ public class CadastrePanel extends javax.swing.JPanel {
      * Creates new form Panel1
      */
     
-    IFachada fachada = Fachada.getInstance();
+   /* IFachada fachada = Fachada.getInstance();
     IRepositorioCliente cliente = RepositorioCliente.getInstance();
     private Cliente c = new Cliente();
-            
+     */       
     public CadastrePanel() {
         initComponents();
     }
@@ -60,109 +60,54 @@ public class CadastrePanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jtxtCampoEnderecoRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 83, 401, -1));
+
         jLabel6.setText("Rua:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 86, -1, -1));
 
         jLblDadosEndereco.setText("Dados de endereço");
+        add(jLblDadosEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 63, -1, -1));
 
         jLabel3.setText("E-mail:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jtxtCampoEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtCampoEmailActionPerformed(evt);
             }
         });
+        add(jtxtCampoEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 37, 226, -1));
 
         jLabel2.setText("Nome:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, -1));
 
         jtxtCampoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtCampoNomeActionPerformed(evt);
             }
         });
+        add(jtxtCampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 11, 490, -1));
+        add(jtxtCampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 37, 144, -1));
 
         jLabel4.setText("Fone:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 40, -1, -1));
+        add(jtxtCampoNumeroResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 83, 52, -1));
 
         jLabel7.setText("Nº:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 86, -1, -1));
+        add(jtxtCampoEnderecoBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 83, 162, -1));
+        add(jtxtCampoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 37, 243, -1));
 
         jLabel9.setText("Bairro:");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 86, -1, -1));
 
         jLabel8.setText("Cel:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 40, -1, -1));
 
         jLabel1.setText("CPF:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLblDadosEndereco)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtxtCampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtxtCampoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtxtCampoCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtxtCampoNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtxtCampoEnderecoRua)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtxtCampoNumeroResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtxtCampoEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtxtCampoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jtxtCampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jtxtCampoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(jtxtCampoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLblDadosEndereco)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jtxtCampoEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jtxtCampoNumeroResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(jtxtCampoEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 14, -1, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 11, 162, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtxtCampoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCampoEmailActionPerformed
