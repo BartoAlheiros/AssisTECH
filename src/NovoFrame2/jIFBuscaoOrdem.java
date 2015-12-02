@@ -40,6 +40,7 @@ public class jIFBuscaoOrdem extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Buscar OS");
+        setPreferredSize(new java.awt.Dimension(1200, 720));
 
         jLabel2.setText("RESULTADOS");
 

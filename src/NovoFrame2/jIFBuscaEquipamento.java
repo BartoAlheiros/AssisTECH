@@ -39,6 +39,7 @@ public class jIFBuscaEquipamento extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setTitle("Buscar Equipamento");
+        setPreferredSize(new java.awt.Dimension(1200, 720));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 

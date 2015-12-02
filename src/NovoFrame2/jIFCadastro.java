@@ -12,7 +12,7 @@ import java.awt.GridBagLayout;
  *
  * @author alheirosb
  */
-public class Frame2 extends javax.swing.JInternalFrame {
+public class jIFCadastro extends javax.swing.JInternalFrame {
     
     GridBagLayout layout = new GridBagLayout();
     CadastrePanel cd1;
@@ -24,7 +24,7 @@ public class Frame2 extends javax.swing.JInternalFrame {
     /**
      * Creates new form Frame1
      */
-    public Frame2() {
+    public jIFCadastro() {
         initComponents();
         cd1 = new CadastrePanel();
         sp1 = new SearchPanel();
@@ -77,8 +77,6 @@ public class Frame2 extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         DynamicPanelBotton = new javax.swing.JPanel();
 
-        setClosable(true);
-        setMaximizable(true);
         setTitle("Nova - Ordem de Serviço");
         setPreferredSize(new java.awt.Dimension(1200, 720));
 
@@ -163,7 +161,6 @@ public class Frame2 extends javax.swing.JInternalFrame {
         );
 
         jRadioButton3.getAccessibleContext().setAccessibleName("Cadastrado");
-        btnEquipNovo.getAccessibleContext().setAccessibleName("Novo");
 
         javax.swing.GroupLayout DynamicPanelBottonLayout = new javax.swing.GroupLayout(DynamicPanelBotton);
         DynamicPanelBotton.setLayout(DynamicPanelBottonLayout);

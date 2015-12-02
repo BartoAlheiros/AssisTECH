@@ -18,7 +18,7 @@ public class AssisTECH extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    Frame2 f = new Frame2();
+    jIFCadastro f = new jIFCadastro();
     
     public AssisTECH() {
         super("AssisTECH");
@@ -87,6 +87,11 @@ public class AssisTECH extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Cliente");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("OS");
@@ -125,12 +130,26 @@ public class AssisTECH extends javax.swing.JFrame {
     private void mnuFrame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame1ActionPerformed
         // TODO add your handling code here:
         desktop.add(f);
+         internalbuscacliente.setVisible(false);
+         internalbuscaequip.setVisible(false);
         f.setVisible(true);
     }//GEN-LAST:event_mnuFrame1ActionPerformed
-
+jIFBuscaEquipamento internalbuscaequip = new jIFBuscaEquipamento();
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        desktop.add(internalbuscaequip);
+        f.setVisible(false);
+        internalbuscacliente.setVisible(false);
+         internalbuscaequip.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+jIFBuscaCliente internalbuscacliente = new jIFBuscaCliente();
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        desktop.add(internalbuscacliente);
+        f.setVisible(false);
+         internalbuscaequip.setVisible(false);
+        internalbuscacliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
