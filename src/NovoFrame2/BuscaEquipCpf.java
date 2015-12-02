@@ -5,6 +5,12 @@
  */
 package NovoFrame2;
 
+import br.ufrpe.assistech.entityBeans.Equip;
+import br.ufrpe.assistech.exceptions.CNEException;
+import br.ufrpe.assistech.negocio.IFachada;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Michel
@@ -14,8 +20,11 @@ public class BuscaEquipCpf extends javax.swing.JPanel {
     /**
      * Creates new form buscaequippanel
      */
+    private Equip a;
+    IFachada fachada;
     public BuscaEquipCpf() {
         initComponents();
+        this.a =a;
     }
 
     /**
@@ -34,7 +43,18 @@ public class BuscaEquipCpf extends javax.swing.JPanel {
 
         jLabel1.setText("Digite um CPF:");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,6 +95,21 @@ public class BuscaEquipCpf extends javax.swing.JPanel {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+         a =(fachada.procurarCliente(jTextField1.getText())).getEquip();
+        } catch (CNEException ex) {
+            Logger.getLogger(BuscaEquipCpf.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+public Equip getA(){
+    return a;
+}
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,7 +1,8 @@
 package NovoFrame2;
 
-
+import br.ufrpe.assistech.negocio.IFachada;
 import pacotePrincipalGUI.*;
+import br.ufrpe.assistech.dados.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -203,9 +204,15 @@ public class AssisTECH extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AssisTECH().setVisible(true);
-                //System.out.println();
+                //System.out.println();                
             }
         });
+        
+        IFachada fachada;
+        IRepositorioCliente cliente;
+        IRepositorioEndereco endereco;
+        IRepositorioEquip equip;
+        IRepositorioOS os;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

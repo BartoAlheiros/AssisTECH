@@ -61,7 +61,7 @@ public class CadastrePanel extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jtxtCampoEnderecoRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 83, 401, -1));
+        add(jtxtCampoEnderecoRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 83, 310, -1));
 
         jLabel6.setText("Rua:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 86, -1, -1));
@@ -92,10 +92,16 @@ public class CadastrePanel extends javax.swing.JPanel {
 
         jLabel4.setText("Fone:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 40, -1, -1));
-        add(jtxtCampoNumeroResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 83, 52, -1));
+
+        jtxtCampoNumeroResidencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtCampoNumeroResidenciaActionPerformed(evt);
+            }
+        });
+        add(jtxtCampoNumeroResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 52, -1));
 
         jLabel7.setText("Nº:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 86, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
         add(jtxtCampoEnderecoBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 83, 162, -1));
         add(jtxtCampoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 37, 243, -1));
 
@@ -117,6 +123,10 @@ public class CadastrePanel extends javax.swing.JPanel {
     private void jtxtCampoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCampoNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCampoNomeActionPerformed
+
+    private void jtxtCampoNumeroResidenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCampoNumeroResidenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtCampoNumeroResidenciaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

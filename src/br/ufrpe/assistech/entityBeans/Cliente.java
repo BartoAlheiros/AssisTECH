@@ -87,6 +87,14 @@ public class Cliente implements Serializable{
         return email;
     }
     
+    public Equip getEquip(){
+        return equipamento;
+    }
+    
+    public void setEquip(Equip equipamento){
+        this.equipamento = equipamento;
+    }
+    
     public String toString (){
         String text = "";
         text += "Nome :" + this.nome + "\n";
